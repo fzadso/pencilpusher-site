@@ -59,7 +59,7 @@
       const img = $("#feature-img");
       img.src = a.large; img.removeAttribute("srcset"); img.width = a.w; img.height = a.h;
       img.alt = `${a.title}, ${a.medium.toLowerCase()} by Cindy Smith`;
-      const link = $("#feature-link"); link.href = a.url; link.dataset.view = id; link.setAttribute("aria-label", `View ${a.title} full screen`);
+      const link = $("#feature-link"); link.href = a.url; link.setAttribute("aria-label", `${a.title}: see it in the shop`);
       $$("[data-slide]").forEach(s => s.hidden = s.dataset.slide !== id);
       $("#feature-count").textContent = `${ART.findIndex(x => x.id === id) + 1} of ${total} · ${a.medium}`;
     });

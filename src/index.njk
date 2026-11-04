@@ -9,11 +9,15 @@ description: "Original pencil drawings, acrylic paintings, $50 prints and custom
   {%- for x in list %}<button type="button" data-feature="{{ x.fileSlug }}"{% if loop.first %} class="on" aria-pressed="true"{% else %} aria-pressed="false"{% endif %} aria-label="{{ x.data.title }}"><img src="{{ x.data.pic.thumb }}" alt="" width="{{ x.data.pic.width }}" height="{{ x.data.pic.height }}"></button>{% endfor %}
 </div>
 <div class="feature" id="feature">
-  <figure><a href="{{ a.url }}" data-view="{{ a.fileSlug }}" id="feature-link" aria-label="View {{ a.data.title }} full screen"><img id="feature-img" src="{{ a.data.pic.large }}" alt="{{ a.data.title }}, {{ a.data.medium | lower }} by {{ settings.artist }}" width="{{ a.data.pic.width }}" height="{{ a.data.pic.height }}" fetchpriority="high"></a></figure>
+  <figure><a href="{{ a.url }}" id="feature-link" aria-label="{{ a.data.title }}: see it in the shop"><img id="feature-img" src="{{ a.data.pic.large }}" alt="{{ a.data.title }}, {{ a.data.medium | lower }} by {{ settings.artist }}" width="{{ a.data.pic.width }}" height="{{ a.data.pic.height }}" fetchpriority="high"></a></figure>
   <div>
     <span class="counter" id="feature-count">1 of {{ list.length }} · {{ a.data.medium }}</span>
-    <div id="feature-card">{% for a in list %}<div class="card{% if a.data.sold %} is-sold{% endif %}" data-id="{{ a.fileSlug }}" data-slide="{{ a.fileSlug }}"{% if not loop.first %} hidden{% endif %}>{% set slot = "home" %}{% include "buy.njk" %}</div>{% endfor %}</div>
-    <a class="more" href="/shop/">See everything in the shop →</a>
+    <div id="feature-card">{% for a in list %}<div class="feature-info" data-slide="{{ a.fileSlug }}"{% if not loop.first %} hidden{% endif %}>
+      <h2 class="art-title">{{ a.data.title }}</h2>
+      <p class="meta">{{ a.data.medium }}{% if a.data.size %} · {{ a.data.size }}{% endif %}</p>
+      <a class="btn" href="{{ a.url }}">See it in the shop</a>
+    </div>{% endfor %}</div>
+    <a class="more" href="/shop/">Browse all the art →</a>
     <a class="comm-cta" href="/commissions/"><span>Commissions open</span>Pets, people &amp; places, drawn from your photos →</a>
   </div>
 </div>
