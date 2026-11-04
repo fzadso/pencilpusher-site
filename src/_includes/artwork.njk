@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+{%- set a = { fileSlug: page.fileSlug, url: page.url, data: { title: title, medium: medium, size: size, year: year, sold: sold, original_price: original_price, canBuyOriginal: canBuyOriginal, canBuyPrint: canBuyPrint, printPrice: printPrice } } -%}
+<p class="crumbs"><a href="/shop/#{{ medium | lower }}">← {{ medium }}</a></p>
+<div class="art-page" data-id="{{ page.fileSlug }}">
+  <figure class="art-figure">
+    {% if pic %}<picture><source type="image/webp" srcset="{{ pic.webpSrcset }}" sizes="(max-width: 900px) 100vw, 800px"><img src="{{ pic.large }}" srcset="{{ pic.jpegSrcset }}" sizes="(max-width: 900px) 100vw, 800px" alt="{{ title }}, {{ medium | lower }} by {{ settings.artist }}" width="{{ pic.width }}" height="{{ pic.height }}"></picture>{% endif %}
+  </figure>
+  <div class="card art-side{% if sold %} is-sold{% endif %}" data-id="{{ page.fileSlug }}">
+    {% set slot = "page" %}{% include "buy.njk" %}
+    {% if content | plain %}<div class="story">{{ content | safe }}</div>{% endif %}
+    <p class="note">{{ settings.print_note }}</p>
+  </div>
+</div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":{{ title | json | safe }},"image":{{ (settings.url + (pic.large if pic else "")) | json | safe }},"description":{{ (medium + " by " + settings.artist + (", " + size if size else "")) | json | safe }},"brand":{"@type":"Brand","name":{{ settings.site_name | json | safe }}},"offers":{"@type":"Offer","priceCurrency":"USD","price":{{ (original_price if canBuyOriginal else printPrice) or 0 }},"availability":"https://schema.org/InStock","url":{{ (settings.url + page.url) | json | safe }}}}</script>

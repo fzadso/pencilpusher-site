@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Contact
+description: "Contact Boise artist Cindy Smith about a commission, an original, or a print in another size."
+permalink: /contact/
+---
+<div class="pagehead"><div><h1>Contact</h1><p>Questions about a piece, a commission idea, or a print in another size. Cindy answers every message by email.</p></div></div>
+<div class="contact">
+  <form class="form" name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company" enctype="multipart/form-data">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="vh"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+    <div class="row"><label for="c-name">Your name<input id="c-name" name="name" autocomplete="name" required></label>
+      <label for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" required></label></div>
+    <label for="c-about">What's this about?<select id="c-about" name="about">
+      <option value="question">A question about a piece</option>
+      <option value="commission">A commission request</option>
+      <option value="print">A print in another size</option>
+      <option value="other">Something else</option></select></label>
+    <label for="c-msg">Message<textarea id="c-msg" name="message" required placeholder="Hi Cindy, I'd love a drawing of our border collie, Scout."></textarea></label>
+    <label for="c-photo">A photo (optional, helpful for commissions, up to 8 MB)<input id="c-photo" name="photo" type="file" accept="image/*"></label>
+    <div><button class="btn" type="submit">Send message</button></div>
+  </form>
+  <div class="side">
+    <div class="box"><h2>Email</h2><p>Prefer your own email app? Write to:</p><span class="email">{{ settings.contact_email }}</span></div>
+    <div class="box"><h2>New work by email</h2><p>A short note when new drawings, paintings or prints are ready.</p>
+      <form class="news" name="newsletter" method="POST" action="/thanks/?signup" data-netlify="true" netlify-honeypot="company">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p class="vh"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+        <label class="vh" for="nl-email">Email</label><input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"><button class="btn" type="submit">Sign up</button></form></div>
+  </div>
+</div>

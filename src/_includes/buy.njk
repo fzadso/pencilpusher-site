@@ -1,0 +1,19 @@
+{#- buy panel for `a` (an artwork) -#}
+{%- set d = a.data -%}
+<div class="buy-panel">
+  <h3 class="art-title">{{ d.title }}</h3>
+  <p class="meta">{{ d.medium }}{% if d.size %} · {{ d.size }}{% endif %}{% if d.year %} · {{ d.year }}{% endif %}</p>
+  {%- if d.canBuyOriginal or d.canBuyPrint %}
+  <fieldset class="opts"><legend class="vh">Original or print</legend>
+    {%- if d.original_price %}
+    <label class="{% if not d.canBuyOriginal %}is-off{% endif %}"><input type="radio" name="opt-{{ a.fileSlug }}-{{ slot or 'c' }}" value="original" data-price="{{ d.original_price }}" {% if not d.canBuyOriginal %}disabled{% else %}checked{% endif %}> Original</label>
+    {%- endif %}
+    {%- if d.canBuyPrint %}
+    <label><input type="radio" name="opt-{{ a.fileSlug }}-{{ slot or 'c' }}" value="print" data-price="{{ d.printPrice }}" {% if not d.canBuyOriginal %}checked{% endif %}> Print</label>
+    {%- endif %}
+  </fieldset>
+  <div class="buy-row"><span class="price">{{ (d.original_price if d.canBuyOriginal else d.printPrice) | money }}</span><button type="button" class="btn" data-add="{{ a.fileSlug }}">Add to cart</button></div>
+  {%- else %}
+  <p class="meta">Sold. <a href="/contact/">Ask about similar work</a>.</p>
+  {%- endif %}
+</div>

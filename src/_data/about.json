@@ -1,0 +1,11 @@
+{
+  "heading": "About Cindy",
+  "photo": "",
+  "photo_alt": "",
+  "body": "Cindy Smith, \"The Pencil Pusher,\" is a Boise native. She has traveled, but always comes back to the mountains and deserts of southern Idaho she grew up with. She is married, with two children, a daughter-in-law and a grandson.\n\nShe has been drawing all her life and winning awards since grade school. For years art was what she did in her spare time around a full-time job. Since retiring it has become a serious pursuit, with many first-place and People's Choice awards at local art shows. She created two art instruction books for Walter Foster Publishing, sold internationally, and her commissions hang throughout the United States and Canada, from portraits and pets to boats and buildings.\n\nFine art pencil work is still her first love, and lately she has taken up acrylic painting too. Her focus is realism: 40 to 200 hours in a single drawing is not unusual. Using a range of pencils, she builds depth and movement through perspective, rich tonality and careful rendering. Wildlife, birds and the outdoors inspire her most, along with portraiture.",
+  "stats": [
+    { "number": "2", "label": "Walter Foster books" },
+    { "number": "40–200", "label": "hours per drawing" },
+    { "number": "US & Canada", "label": "commission clients" }
+  ]
+}

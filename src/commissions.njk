@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: Pencil portrait commissions
+description: "Custom pencil portraits of pets, people, wildlife, homes and boats by Boise artist Cindy Smith. Each commission is quoted by subject. Send your photos for a quote."
+permalink: /commissions/
+---
+<div class="pagehead"><div><h1>Commissions</h1><p>{{ commissions.intro }}</p>
+  <div class="subjects">{% for s in commissions.subjects %}<span>{{ s }}</span>{% endfor %}</div></div></div>
+<div class="samples">
+{% for s in commissions.samples %}<figure><div class="s">{% picture s.image, "Commissioned pencil drawing: " + s.caption, "(max-width: 900px) 46vw, 290px" %}</div><figcaption>{{ s.caption }}</figcaption></figure>
+{% endfor %}
+</div>
+<div class="how">
+  <div><h2>How pricing works</h2>{% for para in commissions.pricing.split("\n\n") %}<p>{{ para }}</p>{% endfor %}
+    <a class="btn cta" href="/contact/?about=commission">Request a commission</a></div>
+  <div><h2>How it works</h2><ol class="steps">{% for s in commissions.steps %}<li>{{ s }}</li>{% endfor %}</ol></div>
+</div>

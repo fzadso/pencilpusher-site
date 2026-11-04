@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{% set pageTitle = (title + " | " + settings.site_name) if title else (settings.site_name + " | " + settings.tagline) %}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ description or settings.description }}">
+<link rel="canonical" href="{{ settings.url }}{{ page.url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ settings.site_name }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ description or settings.description }}">
+<meta property="og:url" content="{{ settings.url }}{{ page.url }}">
+{% if ogImage %}<meta property="og:image" content="{{ settings.url }}{{ ogImage }}">{% endif %}
+<meta name="theme-color" content="#25272a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="w">
+  <a class="logo" href="/">{{ settings.site_name }}<small>{{ settings.artist }} · Pencil &amp; acrylic</small></a>
+  <nav aria-label="Main">
+    <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Home</a>
+    <a href="/shop/"{% if page.url == "/shop/" or "/art/" in page.url %} aria-current="page"{% endif %}>Shop</a>
+    <a href="/commissions/"{% if page.url == "/commissions/" %} aria-current="page"{% endif %}>Commissions</a>
+    <a href="/contact/"{% if page.url == "/contact/" %} aria-current="page"{% endif %}>Contact</a>
+    <a class="cart-link" href="/cart/"{% if page.url == "/cart/" %} aria-current="page"{% endif %}>Cart (<span data-cart-count>0</span>)</a>
+  </nav>
+</div></header>
+<main id="main" class="w">
+{{ content | safe }}
+</main>
+<footer class="site-foot"><div class="w">
+  <span>© {{ settings.artist }} · {{ settings.site_name }} · {{ settings.city }}, {{ settings.region }}</span>
+  <span class="foot-links">
+    {% if settings.instagram %}<a href="{{ settings.instagram }}" rel="noopener">Instagram</a>{% endif %}
+    {% if settings.facebook %}<a href="{{ settings.facebook }}" rel="noopener">Facebook</a>{% endif %}
+    <a href="/contact/">Contact</a>
+  </span>
+</div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="/assets/site.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

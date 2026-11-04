@@ -1,0 +1,28 @@
+---
+layout: base.njk
+description: "Original pencil drawings, acrylic paintings, $50 prints and custom pencil portraits of pets, people and wildlife by Boise, Idaho artist Cindy Smith."
+---
+{%- set list = collections.art | featured -%}
+{%- set a = list[0] -%}
+<h1 class="vh">{{ settings.site_name }}: pencil drawings and acrylic paintings by {{ settings.artist }}, Boise, Idaho</h1>
+<div class="strip" id="strip" aria-label="Choose a piece to see it larger">
+  {%- for x in list %}<button type="button" data-feature="{{ x.fileSlug }}"{% if loop.first %} class="on" aria-pressed="true"{% else %} aria-pressed="false"{% endif %} aria-label="{{ x.data.title }}"><img src="{{ x.data.pic.thumb }}" alt="" width="{{ x.data.pic.width }}" height="{{ x.data.pic.height }}"></button>{% endfor %}
+</div>
+<div class="feature" id="feature">
+  <figure><a href="{{ a.url }}" data-view="{{ a.fileSlug }}" id="feature-link" aria-label="View {{ a.data.title }} full screen"><img id="feature-img" src="{{ a.data.pic.large }}" alt="{{ a.data.title }}, {{ a.data.medium | lower }} by {{ settings.artist }}" width="{{ a.data.pic.width }}" height="{{ a.data.pic.height }}" fetchpriority="high"></a></figure>
+  <div>
+    <span class="counter" id="feature-count">1 of {{ list.length }} · {{ a.data.medium }}</span>
+    <div id="feature-card">{% for a in list %}<div class="card{% if a.data.sold %} is-sold{% endif %}" data-id="{{ a.fileSlug }}" data-slide="{{ a.fileSlug }}"{% if not loop.first %} hidden{% endif %}>{% set slot = "home" %}{% include "buy.njk" %}</div>{% endfor %}</div>
+    <a class="more" href="/shop/">See everything in the shop →</a>
+  </div>
+</div>
+<section class="about" id="about">
+  {% if about.photo %}<figure class="portrait">{% picture about.photo, about.photo_alt, "(max-width: 900px) 92vw, 440px" %}</figure>{% endif %}
+  <div class="about-text">
+    <h2>{{ about.heading }}</h2>
+    {% for para in about.body.split("\n\n") %}<p>{{ para }}</p>{% endfor %}
+    {% if about.stats.length %}<div class="stats">{% for s in about.stats %}<div><b>{{ s.number }}</b><span>{{ s.label }}</span></div>{% endfor %}</div>{% endif %}
+  </div>
+</section>
+{% include "artdata.njk" %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":{{ settings.site_name | json | safe }},"description":{{ settings.description | json | safe }},"url":{{ settings.url | json | safe }},"email":{{ settings.contact_email | json | safe }},"founder":{"@type":"Person","name":{{ settings.artist | json | safe }},"jobTitle":"Artist"},"address":{"@type":"PostalAddress","addressLocality":{{ settings.city | json | safe }},"addressRegion":"ID","addressCountry":"US"},"areaServed":["Boise","Meridian","Nampa","Eagle","Emmett","Treasure Valley","United States"],"knowsAbout":["Pencil portraits","Pet portraits","Wildlife art","Graphite drawing","Acrylic painting"]}</script>

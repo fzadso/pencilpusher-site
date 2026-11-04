@@ -1,0 +1,2 @@
+{#- JSON list of artworks for the viewer. expects `list` -#}
+<script id="art-data" type="application/json">[{% for a in list %}{% set d = a.data %}{"id":{{ a.fileSlug | json | safe }},"url":{{ a.url | json | safe }},"title":{{ d.title | json | safe }},"medium":{{ d.medium | json | safe }},"thumb":{{ (d.pic.thumb if d.pic else "") | json | safe }},"large":{{ (d.pic.large if d.pic else "") | json | safe }},"w":{{ d.pic.width if d.pic else 0 }},"h":{{ d.pic.height if d.pic else 0 }}}{% if not loop.last %},{% endif %}{% endfor %}]</script>

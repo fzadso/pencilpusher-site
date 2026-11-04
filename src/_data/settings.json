@@ -1,0 +1,17 @@
+{
+  "site_name": "The Pencil Pusher",
+  "artist": "Cindy Smith",
+  "url": "https://thepencilpusher.net",
+  "tagline": "Pencil drawings and acrylic paintings by Cindy Smith",
+  "description": "Original pencil drawings, acrylic paintings, $50 prints and custom pencil portrait commissions of pets, people and wildlife by Boise, Idaho artist Cindy Smith.",
+  "city": "Boise",
+  "region": "Idaho",
+  "contact_email": "Thepencilpusher123@gmail.com",
+  "print_price_default": 50,
+  "shipping_print": 10,
+  "shipping_original": 25,
+  "pickup_note": "Free local pickup in the Boise area. Cindy will email you to set a time.",
+  "print_note": "Prints are the same size as the original. Need a different size? Contact Cindy.",
+  "instagram": "",
+  "facebook": ""
+}

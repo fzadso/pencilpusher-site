@@ -1,0 +1,9 @@
+{#- expects `a` = an artwork from collections.art -#}
+{%- set d = a.data -%}
+<article class="card{% if d.sold %} is-sold{% endif %}" data-id="{{ a.fileSlug }}" data-medium="{{ d.medium }}">
+  <a class="thumb" href="{{ a.url }}" data-view="{{ a.fileSlug }}" aria-label="View {{ d.title }} larger">
+    {%- if d.pic %}<picture><source type="image/webp" srcset="{{ d.pic.webpSrcset }}" sizes="(max-width: 540px) 92vw, (max-width: 900px) 46vw, 380px"><img src="{{ d.pic.large }}" srcset="{{ d.pic.jpegSrcset }}" sizes="(max-width: 540px) 92vw, (max-width: 900px) 46vw, 380px" alt="{{ d.title }}, {{ d.medium | lower }} by {{ settings.artist }}" width="{{ d.pic.width }}" height="{{ d.pic.height }}" loading="lazy" decoding="async"></picture>{% endif -%}
+    {%- if d.sold %}<span class="sold-tag">Original sold</span>{% endif -%}
+  </a>
+  {% include "buy.njk" %}
+</article>

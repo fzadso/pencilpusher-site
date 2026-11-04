@@ -1,0 +1,103 @@
+# Cindy's editing page (Decap CMS) at /admin
+backend:
+  name: github
+  repo: fzadso/pencilpusher-site
+  branch: main
+  commit_messages:
+    create: "Add {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Remove {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
+
+site_url: https://thepencilpusher.net
+display_url: https://thepencilpusher.net
+logo_url: /assets/favicon.svg
+locale: en
+
+media_folder: src/uploads
+public_folder: /uploads
+
+collections:
+  - name: art
+    label: Artwork
+    label_singular: Artwork
+    description: "Every drawing and painting on the website. Click New Artwork to add one. To mark a piece sold, open it and switch on “Original is sold”."
+    folder: src/art
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    sortable_fields: [date, title, medium]
+    view_filters:
+      - { label: Pencil, field: medium, pattern: Pencil }
+      - { label: Acrylic, field: medium, pattern: Acrylic }
+      - { label: Sold, field: sold, pattern: true }
+    summary: "{{title}} · {{medium}} · {{size}}"
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - { label: "Photo", name: image, widget: image, hint: "A straight-on photo in good light. Any size is fine; the website shrinks it automatically." }
+      - { label: "Medium", name: medium, widget: select, options: [Pencil, Acrylic], default: Pencil }
+      - { label: "Size", name: size, widget: string, required: false, hint: "For example: 16 × 20 in" }
+      - { label: "Year", name: year, widget: number, value_type: int, required: false }
+      - { label: "Price of the original ($)", name: original_price, widget: number, value_type: int, required: false, hint: "Leave empty if the original isn't for sale." }
+      - { label: "Original is sold", name: sold, widget: boolean, default: false, hint: "Switch on when the original sells. The piece stays on the site with a Sold tag." }
+      - { label: "Sell prints", name: prints_available, widget: boolean, default: true }
+      - { label: "Print price ($)", name: print_price, widget: number, value_type: int, default: 50, required: false, hint: "Prints are the same size as the original." }
+      - { label: "Show on the home page", name: featured, widget: boolean, default: true }
+      - { label: "Date added", name: date, widget: datetime, hint: "Newest pieces show first." }
+      - { label: "About this piece (optional)", name: body, widget: markdown, required: false, buttons: [bold, italic, link], editor_components: [] }
+
+  - name: pages
+    label: Pages & settings
+    description: "Your About text, the Commissions page and shop settings."
+    editor: { preview: false }
+    files:
+      - name: about
+        label: "About me (home page)"
+        file: src/_data/about.json
+        fields:
+          - { label: "Heading", name: heading, widget: string }
+          - { label: "Photo (optional)", name: photo, widget: image, required: false }
+          - { label: "Describe the photo", name: photo_alt, widget: string, required: false, hint: "For people using screen readers, e.g. “Cindy's drawing of herself drawing her reflection in a pond”" }
+          - { label: "About text", name: body, widget: text, hint: "Leave a blank line between paragraphs." }
+          - label: "Quick facts"
+            name: stats
+            widget: list
+            fields:
+              - { label: "Big number or words", name: number, widget: string }
+              - { label: "Label", name: label, widget: string }
+      - name: commissions
+        label: "Commissions page"
+        file: src/_data/commissions.json
+        fields:
+          - { label: "Opening sentence", name: intro, widget: text }
+          - { label: "Subjects", name: subjects, widget: list, hint: "Short words, separated by commas" }
+          - { label: "How pricing works", name: pricing, widget: text, hint: "Leave a blank line between paragraphs." }
+          - { label: "Steps", name: steps, widget: list, field: { label: Step, name: step, widget: string } }
+          - label: "Sample commissions"
+            name: samples
+            widget: list
+            fields:
+              - { label: "Photo", name: image, widget: image }
+              - { label: "Caption", name: caption, widget: string }
+      - name: settings
+        label: "Shop & contact settings"
+        file: src/_data/settings.json
+        fields:
+          - { label: "Website name", name: site_name, widget: string }
+          - { label: "Your name", name: artist, widget: string }
+          - { label: "Web address", name: url, widget: hidden }
+          - { label: "Short tagline", name: tagline, widget: string }
+          - { label: "Description for Google", name: description, widget: text, hint: "One or two sentences. Mention what you draw and Boise, Idaho." }
+          - { label: "City", name: city, widget: string }
+          - { label: "State", name: region, widget: string }
+          - { label: "Email shown on the Contact page", name: contact_email, widget: string }
+          - { label: "Default print price ($)", name: print_price_default, widget: number, value_type: int, hint: "Used when a piece has no print price filled in." }
+          - { label: "Shipping for prints ($)", name: shipping_print, widget: number, value_type: int }
+          - { label: "Shipping when an original is in the order ($)", name: shipping_original, widget: number, value_type: int }
+          - { label: "Local pickup note", name: pickup_note, widget: string }
+          - { label: "Print size note", name: print_note, widget: string }
+          - { label: "Instagram link", name: instagram, widget: string, required: false }
+          - { label: "Facebook link", name: facebook, widget: string, required: false }

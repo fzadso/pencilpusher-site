@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Your cart
+permalink: /cart/
+eleventyExcludeFromCollections: true
+---
+<div class="pagehead"><div><h1>Your cart</h1></div></div>
+<div class="cart" id="cart">
+  <div id="cart-items"><p class="empty">Your cart is empty. <a href="/shop/">Visit the shop</a>.</p></div>
+  <aside class="box cart-sum" id="cart-sum" hidden>
+    <h2>Delivery</h2>
+    <label class="radio"><input type="radio" name="delivery" value="ship" checked> Ship to me (U.S.)</label>
+    <label class="radio"><input type="radio" name="delivery" value="pickup"> Local pickup, Boise area</label>
+    <p class="meta" id="ship-note"></p>
+    <div class="sum-row"><span>Artwork</span><span id="sum-items"></span></div>
+    <div class="sum-row"><span>Shipping</span><span id="sum-ship"></span></div>
+    <div class="sum-row total"><span>Total</span><span id="sum-total"></span></div>
+    <button type="button" class="btn wide" id="checkout">Checkout with Square</button>
+    <p class="meta">You'll pay securely on Square's checkout page. Sales tax, if any, is added there.</p>
+    <p class="err" id="cart-err" role="alert" hidden></p>
+  </aside>
+</div>
+<script id="shop-data" type="application/json">{"shipPrint":{{ settings.shipping_print or 0 }},"shipOriginal":{{ settings.shipping_original or 0 }},"pickup":{{ settings.pickup_note | json | safe }}}</script>

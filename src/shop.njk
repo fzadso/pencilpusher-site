@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Shop originals and prints
+description: "Buy original pencil drawings and acrylic paintings by Cindy Smith, or $50 prints the same size as the original. Shipping in the U.S. or local pickup in Boise."
+permalink: /shop/
+---
+<div class="pagehead">
+  <div><h1>Shop</h1><p>Originals and prints. {{ settings.print_note }} Tap any piece to see it larger.</p></div>
+  <nav class="tabs" aria-label="Medium"><a href="#pencil" data-tab="Pencil" aria-current="true">Pencil</a><a href="#acrylic" data-tab="Acrylic">Acrylic</a></nav>
+</div>
+{% for m in ["Pencil", "Acrylic"] %}
+{%- set items = collections.art | byMedium(m) -%}
+<section class="shop-section" id="{{ m | lower }}" data-section="{{ m }}" aria-labelledby="h-{{ m | lower }}">
+  <h2 class="shop-h" id="h-{{ m | lower }}">{{ m }}</h2>
+  {% if items.length %}<div class="grid">{% for a in items %}{% include "card.njk" %}{% endfor %}</div>
+  {% else %}<p class="empty">New {{ m | lower }} work is on the way.</p>{% endif %}
+</section>
+{% endfor %}
+<p class="shopnote">Need a print in a different size or shipping outside the U.S.? <a href="/contact/">Contact Cindy</a>. {{ settings.pickup_note }}</p>
+{% set list = collections.art %}{% include "artdata.njk" %}
