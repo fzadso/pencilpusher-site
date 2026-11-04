@@ -11,8 +11,9 @@ Do these in order. Each step says who does it. **Never paste passwords, tokens o
 ## 2. Contact form emails, about 3 minutes
 1. In Netlify: **Forms** → **Enable form detection**, then redeploy (**Deploys → Trigger deploy → Deploy site**).
 2. **Project configuration → Notifications → Emails and webhooks → Form submission notifications → Add notification → Email notification**.
-   - Event: *New form submission*, Form: **contact**, Email: **Thepencilpusher123@gmail.com**. Save.
-3. Send a test message from the Contact page and check that it arrives (check Spam the first time and mark it "Not spam").
+   - Event: *New form submission*, Form: **contact**, Email: **your own Netlify account email** (the free plan only sends to the account owner).
+3. Forward them to Cindy with Gmail (in the account that receives them): **Settings → Forwarding and POP/IMAP → Add a forwarding address →** `Thepencilpusher123@gmail.com` (she confirms the code), then create a **filter**: From = Netlify's form sender address, Subject contains `contact` → **Forward it to** `Thepencilpusher123@gmail.com`.
+   - Send a test message from the Contact page and check that it reaches her (check Spam the first time).
 4. Newsletter signups are under **Forms → newsletter** (Download as CSV).
 
 ## 3. Cindy's login to /admin, about 15 minutes
