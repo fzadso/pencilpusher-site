@@ -63,8 +63,9 @@ main{padding-block:28px 0;min-height:50vh}
 .buy-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:2px}
 .price{font:400 22px/1 var(--display);font-variant-numeric:tabular-nums}
 .thumb{position:relative;display:grid;grid-template:minmax(0,1fr)/minmax(0,1fr);place-items:center;aspect-ratio:1;background:var(--paper);padding:14px;cursor:zoom-in;overflow:hidden}
-.thumb picture,.thumb img{max-width:100%;max-height:100%;display:block}
-.thumb img{width:auto;height:auto;object-fit:contain}
+/* the whole picture always fits inside its square frame, tall or wide */
+.thumb picture{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center}
+.thumb img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .sold-tag{position:absolute;top:10px;left:10px;background:var(--ac);color:var(--on);font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px}
 .sold-line{margin:2px 0 0;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--ac)}
 .policy{margin-top:14px;border-top:1px solid var(--rule);padding-top:12px;font-size:14px;color:var(--mu)}
