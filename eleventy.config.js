@@ -1,5 +1,7 @@
 import Image from "@11ty/eleventy-img";
 import path from "node:path";
+import fs from "node:fs/promises";
+import sharp from "sharp";
 
 // Turn a CMS image path like "/uploads/fox.jpg" into resized web images.
 // Large phone photos are shrunk automatically; nothing is ever enlarged.
@@ -35,8 +37,22 @@ export async function processImage(src, widths = [480, 960, 1800]) {
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/admin");
-  // Original uploads are NOT published as-is (phone photos can contain GPS location).
-  // Only the resized copies made below (metadata removed) go on the website.
+  // Uploaded photos are published at /uploads/ (the editor uses them for previews),
+  // but re-saved first so hidden details like GPS location are removed.
+  eleventyConfig.on("eleventy.before", async () => {
+    const out = "_site/uploads";
+    await fs.mkdir(out, { recursive: true });
+    for (const name of await fs.readdir("src/uploads")) {
+      const src = path.join("src/uploads", name), dest = path.join(out, name);
+      try {
+        const done = await fs.stat(dest).catch(() => null);
+        if (done && done.mtimeMs >= (await fs.stat(src)).mtimeMs) continue;
+        await sharp(src).rotate().toFile(dest); // rotate() applies the photo's orientation; metadata is dropped
+      } catch (err) {
+        console.warn(`[uploads] Skipped ${name}: ${err.message}`);
+      }
+    }
+  });
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // {% picture "/uploads/x.jpg", "Alt text", "(max-width: 600px) 100vw, 50vw", "class" %}
