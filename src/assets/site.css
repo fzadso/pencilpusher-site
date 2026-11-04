@@ -53,12 +53,15 @@ main{padding-block:28px 0;min-height:50vh}
 #toast a{color:var(--on);font-weight:600}
 /* buy panel */
 .card{position:relative;display:grid;gap:12px;align-content:start;min-width:0}
-.buy-panel{display:grid;gap:7px}
+.buy-panel{display:flex;flex-direction:column;gap:7px;flex:1}
+.grid .card{display:flex;flex-direction:column}
+.grid .card .thumb{flex:none}
+.buy-row{margin-top:auto!important}
 .art-title{font-size:22px}
 .opts{border:0;margin:2px 0 0;padding:0;display:flex;gap:6px}
 .opts label{flex:1;display:flex;gap:7px;align-items:center;justify-content:center;font-size:14px;padding:9px;border:1px solid var(--rule);cursor:pointer}
 .opts label:has(input:checked){border-color:var(--ac);color:var(--ac)}
-.opts label.is-off{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+.opts label.only{cursor:default;border-style:dashed;color:var(--ac);font-weight:600;font-size:13px;letter-spacing:.02em}
 .opts input{accent-color:var(--ac);margin:0;width:auto;padding:0}
 .buy-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:2px}
 .price{font:400 22px/1 var(--display);font-variant-numeric:tabular-nums}
@@ -67,7 +70,6 @@ main{padding-block:28px 0;min-height:50vh}
 .thumb picture{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center}
 .thumb img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .sold-tag{position:absolute;top:10px;left:10px;background:var(--ac);color:var(--on);font:700 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px}
-.sold-line{margin:2px 0 0;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--ac)}
 .policy{margin-top:14px;border-top:1px solid var(--rule);padding-top:12px;font-size:14px;color:var(--mu)}
 .policy summary{cursor:pointer;color:var(--ink);font-weight:500}
 .policy p{margin:10px 0 0}
