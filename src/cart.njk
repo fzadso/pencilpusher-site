@@ -18,6 +18,7 @@ eleventyExcludeFromCollections: true
     <button type="button" class="btn wide" id="checkout">Checkout with Square</button>
     <p class="meta">You'll pay securely on Square's checkout page. Sales tax, if any, is added there.</p>
     <p class="err" id="cart-err" role="alert" hidden></p>
+    {% if settings.shipping_returns %}<details class="policy"><summary>Shipping &amp; returns</summary>{% for para in settings.shipping_returns.split("\n\n") %}<p>{{ para }}</p>{% endfor %}</details>{% endif %}
   </aside>
 </div>
 <script id="shop-data" type="application/json">{"shipPrint":{{ settings.shipping_print or 0 }},"shipOriginal":{{ settings.shipping_original or 0 }},"pickup":{{ settings.pickup_note | json | safe }}}</script>

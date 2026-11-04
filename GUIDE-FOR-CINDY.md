@@ -79,7 +79,7 @@ Usually it's better to mark it sold, so people can still see it and buy prints. 
 Click **Pages & settings**, then:
 - **About me (home page)**: your story, the quick facts, and an optional photo.
 - **Commissions page**: the opening sentence, the steps, and the sample pictures.
-- **Shop & contact settings**: shipping prices, the email shown on the Contact page, your Instagram or Facebook link.
+- **Shop & contact settings**: shipping prices, your **Shipping & returns** wording (shown on the cart and on each piece's page), the email shown on the Contact page, your Instagram or Facebook link.
 
 Make your change, then **Publish** and **Publish now**.
 

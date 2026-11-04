@@ -3,10 +3,11 @@
 <div class="buy-panel">
   <h3 class="art-title">{{ d.title }}</h3>
   <p class="meta">{{ d.medium }}{% if d.size %} · {{ d.size }}{% endif %}{% if d.year %} · {{ d.year }}{% endif %}</p>
+  {%- if d.sold and d.canBuyPrint %}<p class="sold-line">Original sold · prints available</p>{% endif %}
   {%- if d.canBuyOriginal or d.canBuyPrint %}
   <fieldset class="opts"><legend class="vh">Original or print</legend>
-    {%- if d.original_price %}
-    <label class="{% if not d.canBuyOriginal %}is-off{% endif %}"><input type="radio" name="opt-{{ a.fileSlug }}-{{ slot or 'c' }}" value="original" data-price="{{ d.original_price }}" {% if not d.canBuyOriginal %}disabled{% else %}checked{% endif %}> Original</label>
+    {%- if d.canBuyOriginal %}
+    <label><input type="radio" name="opt-{{ a.fileSlug }}-{{ slot or 'c' }}" value="original" data-price="{{ d.original_price }}" checked> Original</label>
     {%- endif %}
     {%- if d.canBuyPrint %}
     <label><input type="radio" name="opt-{{ a.fileSlug }}-{{ slot or 'c' }}" value="print" data-price="{{ d.printPrice }}" {% if not d.canBuyOriginal %}checked{% endif %}> Print</label>

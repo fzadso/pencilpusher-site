@@ -77,6 +77,12 @@ export default function (eleventyConfig) {
     const list = [...picked, ...rest];
     return list.length ? list : items;
   });
+  // Previous / next piece of the same medium, wrapping around
+  eleventyConfig.addFilter("neighbors", (items, url) => {
+    const i = items.findIndex(x => x.url === url);
+    if (i < 0 || items.length < 2) return null;
+    return { prev: items[(i - 1 + items.length) % items.length], next: items[(i + 1) % items.length] };
+  });
   eleventyConfig.addFilter("json", v => JSON.stringify(v).replace(/</g, "\\u003c"));
   eleventyConfig.addFilter("isoDate", d => new Date(d).toISOString().slice(0, 10));
   eleventyConfig.addFilter("plain", s => String(s || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim());

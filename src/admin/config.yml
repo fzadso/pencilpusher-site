@@ -129,6 +129,7 @@ collections:
           - { label: "Shipping for prints ($)", name: shipping_print, widget: number, value_type: int }
           - { label: "Shipping when an original is in the order ($)", name: shipping_original, widget: number, value_type: int }
           - { label: "Local pickup note", name: pickup_note, widget: string }
+          - { label: "Shipping & returns policy", name: shipping_returns, widget: text, hint: "Shown on the cart page and on each artwork's page. Leave a blank line between paragraphs." }
           - { label: "Print size note", name: print_note, widget: string }
           - { label: "Instagram link", name: instagram, widget: string, required: false }
           - { label: "Facebook link", name: facebook, widget: string, required: false }

@@ -14,6 +14,7 @@ description: "Original pencil drawings, acrylic paintings, $50 prints and custom
     <span class="counter" id="feature-count">1 of {{ list.length }} · {{ a.data.medium }}</span>
     <div id="feature-card">{% for a in list %}<div class="card{% if a.data.sold %} is-sold{% endif %}" data-id="{{ a.fileSlug }}" data-slide="{{ a.fileSlug }}"{% if not loop.first %} hidden{% endif %}>{% set slot = "home" %}{% include "buy.njk" %}</div>{% endfor %}</div>
     <a class="more" href="/shop/">See everything in the shop →</a>
+    <a class="comm-cta" href="/commissions/"><span>Commissions open</span>Pets, people &amp; places, drawn from your photos →</a>
   </div>
 </div>
 <section class="about" id="about">
