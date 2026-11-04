@@ -160,15 +160,17 @@ input[type=file]{padding:9px}
 .err{color:var(--err);font-size:14px;margin:0}
 /* viewer */
 html.locked{overflow:hidden}
-.viewer{position:fixed;inset:0;z-index:50;background:rgba(20,21,23,.98);display:grid;grid-template-rows:auto minmax(0,1fr) auto;grid-template-columns:minmax(0,1fr) 320px;padding-top:env(safe-area-inset-top,0px)}
+.viewer{position:fixed;inset:0;z-index:50;background:#17181a;display:grid;grid-template-rows:auto minmax(0,1fr) auto;grid-template-columns:minmax(0,1fr) 320px;padding-top:env(safe-area-inset-top,0px)}
 .v-strip{grid-column:1/-1;display:flex;gap:6px;overflow-x:auto;padding:10px 64px 10px max(12px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--rule)}
 .v-strip button{flex:0 0 auto;width:64px;height:48px;padding:0;border:2px solid transparent;background:var(--paper);cursor:pointer;opacity:.6}
 .v-strip button.on{border-color:var(--ac);opacity:1}
 .v-strip img{width:100%;height:100%;object-fit:cover;display:block}
 .v-x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));width:42px;height:42px;border:0;background:var(--sf);color:var(--ink);font-size:18px;cursor:pointer}
-.v-stage{display:grid;grid-template-columns:52px minmax(0,1fr) 52px;align-items:center;min-height:0;padding:16px 0}
-.v-stage figure{margin:0;height:100%;display:grid;place-items:center;min-height:0}
-.v-stage figure img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;background:var(--paper);padding:10px}
+.v-stage{display:grid;grid-template-columns:52px minmax(0,1fr) 52px;grid-template-rows:minmax(0,1fr);align-items:stretch;min-height:0;padding:16px 0;overflow:hidden}
+.v-nav{align-self:center}
+.v-stage figure{margin:0;position:relative;height:100%;min-height:0;min-width:0}
+/* the picture always fits inside the screen, however tall it is */
+.v-stage figure img{position:absolute;inset:0;margin:auto;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;background:var(--paper);padding:10px;box-sizing:border-box}
 .v-nav{height:72px;border:0;background:none;color:var(--ink);font-size:42px;cursor:pointer}
 .v-nav:hover{color:var(--ac)}
 .v-panel{grid-row:2/4;grid-column:2;padding:24px;border-left:1px solid var(--rule);overflow:auto}
