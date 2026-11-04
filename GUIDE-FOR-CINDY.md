@@ -12,6 +12,10 @@ Hi Mom! Everything on your website can be changed from one page. You don't need 
 
 You'll see two sections on the left: **Artwork** and **Pages & settings**.
 
+**Tip:** In **Artwork**, click the little **grid** button at the top right to see your art as pictures instead of a list. It remembers your choice. Newest pieces are at the top, and the **Pencil**, **Acrylic** and **Sold** buttons narrow the list.
+
+While you're editing a piece, the right half of the screen shows a **preview** of how it will look on the website, and it updates as you type.
+
 ---
 
 ## Adding a new piece of art
@@ -19,14 +23,14 @@ You'll see two sections on the left: **Artwork** and **Pages & settings**.
 1. Click **Artwork**, then the **New Artwork** button.
 2. Fill in:
    - **Title**: for example *Silver Fox*
-   - **Photo**: click **Choose an image**, then **Upload**, and pick the photo from your computer. Any size is fine; the website shrinks it for you.
-   - **Medium**: Pencil or Acrylic. This decides which tab it shows under in the Shop.
+   - **Photo**: click **Choose an image**, then **Upload**, and pick the photo from your computer. Any size is fine; the website shrinks it for you. Use a .jpg or .png photo.
+   - **Pencil or acrylic?**: this decides which tab it shows under in the Shop.
    - **Size**: for example *16 × 20 in*
    - **Price of the original**: just the number, like *950*. Leave it empty if the original isn't for sale.
    - **Sell prints**: on, unless you don't want prints of this one.
    - **Print price**: starts at 50. Change it any time.
    - **Show on the home page**: on, if you want it in the row of pictures at the top of the home page.
-   - **Date added**: leave as today. Newest pieces show first.
+   - The last few boxes (year, a few words about the piece, date added) are optional. You can leave them alone.
 3. Click **Publish** at the top, then **Publish now**.
 
 > **Photo tips:** Take the picture straight on, in daylight but out of direct sun, with no glass or frame. Fill the picture with the artwork. Bigger photos look better when people zoom in.
@@ -38,7 +42,7 @@ You'll see two sections on the left: **Artwork** and **Pages & settings**.
 When an original sells:
 
 1. Click **Artwork** and click the piece.
-2. Switch on **Original is sold**.
+2. Switch on **The original is SOLD**.
 3. Click **Publish**, then **Publish now**.
 
 The piece stays on the website with a **Sold** tag. People can still buy prints of it.

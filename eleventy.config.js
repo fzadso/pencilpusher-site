@@ -6,14 +6,19 @@ import path from "node:path";
 export async function processImage(src, widths = [480, 960, 1800]) {
   if (!src) return null;
   const file = path.join("src", src.replace(/^\//, ""));
-  const meta = await Image(file, {
+  let meta;
+  try { meta = await Image(file, {
     widths,
     formats: ["webp", "jpeg"],
     outputDir: "_site/img/",
     urlPath: "/img/",
     sharpJpegOptions: { quality: 82, progressive: true },
     sharpWebpOptions: { quality: 80 },
-  });
+  }); } catch (err) {
+    // A photo the site can't read (e.g. an iPhone HEIC file) shouldn't take the whole site down.
+    console.warn(`[images] Skipped ${src}: ${err.message}`);
+    return null;
+  }
   const jpg = meta.jpeg, webp = meta.webp;
   const big = jpg[jpg.length - 1];
   return {
@@ -30,7 +35,8 @@ export async function processImage(src, widths = [480, 960, 1800]) {
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/admin");
-  eleventyConfig.addPassthroughCopy({ "src/uploads": "uploads" });
+  // Original uploads are NOT published as-is (phone photos can contain GPS location).
+  // Only the resized copies made below (metadata removed) go on the website.
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // {% picture "/uploads/x.jpg", "Alt text", "(max-width: 600px) 100vw, 50vw", "class" %}

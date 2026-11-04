@@ -1,0 +1,7 @@
+body{background:#25272a;padding:20px}
+.pv-note{margin:0 0 16px;font:500 12px/1.4 "Work Sans",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#a3d3f2}
+.art-page{grid-template-columns:minmax(0,1fr) 280px!important;gap:28px!important}
+.art-figure{position:relative}
+.art-figure img{max-height:70vh}
+.pv-empty{aspect-ratio:4/3;width:100%;display:grid;place-items:center;border:1px dashed #6b7076;color:#a9adb3;font:16px "Work Sans",Arial,sans-serif;padding:24px;text-align:center}
+.opts input{pointer-events:none}

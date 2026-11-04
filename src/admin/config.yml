@@ -12,7 +12,10 @@ backend:
 
 site_url: https://thepencilpusher.net
 display_url: https://thepencilpusher.net
-logo_url: /assets/favicon.svg
+logo:
+  src: /assets/admin-logo.svg
+  show_in_header: true
+show_preview_links: true
 locale: en
 
 media_folder: src/uploads
@@ -22,36 +25,42 @@ collections:
   - name: art
     label: Artwork
     label_singular: Artwork
-    description: "Every drawing and painting on the website. Click New Artwork to add one. To mark a piece sold, open it and switch on “Original is sold”."
+    description: "Click New Artwork to add a piece. Click a piece to change its price or mark it sold. Tip: the grid button at the top right shows your art as pictures."
     folder: src/art
     create: true
     delete: true
     slug: "{{slug}}"
     extension: md
     format: frontmatter
-    sortable_fields: [date, title, medium]
+    preview_path: "art/{{slug}}/"
+    sortable_fields:
+      - { field: date, label: "Newest", default_sort: desc }
+      - { field: title, label: "Title" }
+      - { field: medium, label: "Medium" }
     view_filters:
-      - { label: Pencil, field: medium, pattern: Pencil }
-      - { label: Acrylic, field: medium, pattern: Acrylic }
-      - { label: Sold, field: sold, pattern: true }
-    summary: "{{title}} · {{medium}} · {{size}}"
+      - { label: "Pencil", field: medium, pattern: Pencil }
+      - { label: "Acrylic", field: medium, pattern: Acrylic }
+      - { label: "Sold", field: sold, pattern: true }
+    view_groups:
+      - { label: "Medium", field: medium }
+    summary: "{{title}} · {{medium}}{{sold | ternary(' · SOLD', '')}}"
     fields:
+      - { label: "Photo", name: image, widget: image, choose_url: false, hint: "Click to upload a photo from your computer. Any size works; the website shrinks it. Use .jpg or .png photos." }
       - { label: "Title", name: title, widget: string }
-      - { label: "Photo", name: image, widget: image, hint: "A straight-on photo in good light. Any size is fine; the website shrinks it automatically." }
-      - { label: "Medium", name: medium, widget: select, options: [Pencil, Acrylic], default: Pencil }
+      - { label: "Pencil or acrylic?", name: medium, widget: select, options: [Pencil, Acrylic], default: Pencil, hint: "Decides which tab it appears under in the Shop." }
       - { label: "Size", name: size, widget: string, required: false, hint: "For example: 16 × 20 in" }
-      - { label: "Year", name: year, widget: number, value_type: int, required: false }
-      - { label: "Price of the original ($)", name: original_price, widget: number, value_type: int, required: false, hint: "Leave empty if the original isn't for sale." }
-      - { label: "Original is sold", name: sold, widget: boolean, default: false, hint: "Switch on when the original sells. The piece stays on the site with a Sold tag." }
+      - { label: "Price of the original ($)", name: original_price, widget: number, value_type: int, required: false, hint: "Just the number, like 950. Leave empty if the original isn't for sale." }
+      - { label: "The original is SOLD", name: sold, widget: boolean, default: false, hint: "Switch on when the original sells. It stays on the site with a Sold tag, and prints can still be bought." }
       - { label: "Sell prints", name: prints_available, widget: boolean, default: true }
-      - { label: "Print price ($)", name: print_price, widget: number, value_type: int, default: 50, required: false, hint: "Prints are the same size as the original." }
-      - { label: "Show on the home page", name: featured, widget: boolean, default: true }
-      - { label: "Date added", name: date, widget: datetime, hint: "Newest pieces show first." }
-      - { label: "About this piece (optional)", name: body, widget: markdown, required: false, buttons: [bold, italic, link], editor_components: [] }
+      - { label: "Print price ($)", name: print_price, widget: number, value_type: int, default: 50, required: false, hint: "Prints are the same size as the original. Raise or lower it any time." }
+      - { label: "Show in the row of pictures on the home page", name: featured, widget: boolean, default: true }
+      - { label: "Year made (optional)", name: year, widget: number, value_type: int, required: false }
+      - { label: "A few words about this piece (optional)", name: body, widget: markdown, required: false, buttons: [bold, italic, link], editor_components: [], hint: "Shows on the piece's own page." }
+      - { label: "Date added", name: date, widget: datetime, default: "{{now}}", hint: "Newest pieces show first. You can leave this alone." }
 
   - name: pages
     label: Pages & settings
-    description: "Your About text, the Commissions page and shop settings."
+    description: "Your About text, the Commissions page, and shipping prices."
     editor: { preview: false }
     files:
       - name: about
