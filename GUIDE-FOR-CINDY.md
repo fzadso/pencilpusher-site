@@ -29,7 +29,6 @@ While you're editing a piece, the right half of the screen shows a **preview** o
    - **Price of the original**: just the number, like *950*. Leave it empty if the original isn't for sale.
    - **Sell prints**: on, unless you don't want prints of this one.
    - **Print price**: starts at 50. Change it any time.
-   - **Show on the home page**: on, if you want it in the row of pictures at the top of the home page.
    - The last few boxes (year, a few words about the piece, date added) are optional. You can leave them alone.
 3. Click **Publish** at the top, then **Publish now**.
 
@@ -60,6 +59,18 @@ The piece stays on the website with a **Sold** tag. People can still buy prints 
 ## Removing a piece
 
 Usually it's better to mark it sold, so people can still see it and buy prints. To remove it completely: open the piece, click **Delete entry** at the top right, and confirm.
+
+---
+
+## Choosing the pictures on the home page
+
+1. Click **Pages & settings**, then **Home page gallery**.
+2. The list is the row of pictures at the top of your home page, in order. **The first one is the big picture** people see when they arrive.
+   - **Change the order:** drag a piece by its ☰ handle.
+   - **Add a piece:** click **Add picture** at the bottom and start typing its title.
+   - **Take a piece off the home page:** click its **X**. It stays in the Shop.
+3. **Also show new pieces automatically:** when this is on, new art you add shows up on the home page by itself, after the ones in your list. Switch it off if you want only the ones you picked.
+4. Click **Publish**, then **Publish now**.
 
 ---
 

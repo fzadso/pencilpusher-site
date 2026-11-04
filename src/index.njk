@@ -2,7 +2,7 @@
 layout: base.njk
 description: "Original pencil drawings, acrylic paintings, $50 prints and custom pencil portraits of pets, people and wildlife by Boise, Idaho artist Cindy Smith."
 ---
-{%- set list = collections.art | featured -%}
+{%- set list = collections.art | homeGallery(home) -%}
 {%- set a = list[0] -%}
 <h1 class="vh">{{ settings.site_name }}: pencil drawings and acrylic paintings by {{ settings.artist }}, Boise, Idaho</h1>
 <div class="strip" id="strip" aria-label="Choose a piece to see it larger">

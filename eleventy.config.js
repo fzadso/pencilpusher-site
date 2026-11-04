@@ -67,7 +67,16 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("money", n => (n || n === 0) ? "$" + Number(n).toLocaleString("en-US") : "");
   eleventyConfig.addFilter("byMedium", (items, m) => items.filter(i => i.data.medium === m));
-  eleventyConfig.addFilter("featured", items => { const f = items.filter(i => i.data.featured !== false); return f.length ? f : items; });
+  // Home page gallery: the pieces Cindy picked, in her order (first one shows large).
+  // Optionally followed by any other pieces, newest first. Falls back to all art.
+  eleventyConfig.addFilter("homeGallery", (items, home = {}) => {
+    const bySlug = new Map(items.map(i => [i.fileSlug, i]));
+    const picked = (home.gallery || []).map(s => bySlug.get(s)).filter(Boolean);
+    const seen = new Set(picked);
+    const rest = home.add_new_automatically === false ? [] : items.filter(i => !seen.has(i));
+    const list = [...picked, ...rest];
+    return list.length ? list : items;
+  });
   eleventyConfig.addFilter("json", v => JSON.stringify(v).replace(/</g, "\\u003c"));
   eleventyConfig.addFilter("isoDate", d => new Date(d).toISOString().slice(0, 10));
   eleventyConfig.addFilter("plain", s => String(s || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim());

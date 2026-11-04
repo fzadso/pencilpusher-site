@@ -53,7 +53,6 @@ collections:
       - { label: "The original is SOLD", name: sold, widget: boolean, default: false, hint: "Switch on when the original sells. It stays on the site with a Sold tag, and prints can still be bought." }
       - { label: "Sell prints", name: prints_available, widget: boolean, default: true }
       - { label: "Print price ($)", name: print_price, widget: number, value_type: int, default: 50, required: false, hint: "Prints are the same size as the original. Raise or lower it any time." }
-      - { label: "Show in the row of pictures on the home page", name: featured, widget: boolean, default: true }
       - { label: "Year made (optional)", name: year, widget: number, value_type: int, required: false }
       - { label: "A few words about this piece (optional)", name: body, widget: markdown, required: false, buttons: [bold, italic, link], editor_components: [], hint: "Shows on the piece's own page." }
       - { label: "Date added", name: date, widget: datetime, default: "{{now}}", hint: "Newest pieces show first. You can leave this alone." }
@@ -63,6 +62,29 @@ collections:
     description: "Your About text, the Commissions page, and shipping prices."
     editor: { preview: false }
     files:
+      - name: home
+        label: "Home page gallery"
+        file: src/_data/home.json
+        fields:
+          - label: "Pictures on the home page, in order"
+            name: gallery
+            label_singular: "picture"
+            widget: list
+            hint: "The FIRST one shows large when someone visits. Drag the ☰ handles to change the order. Click Add to put another piece in, or the X to take one out (that only removes it from the home page, not from the shop)."
+            add_to_top: false
+            field:
+              label: "Artwork"
+              name: piece
+              widget: relation
+              collection: art
+              value_field: "{{slug}}"
+              search_fields: [title]
+              display_fields: ["{{title}} ({{medium}})"]
+          - label: "Also show new pieces automatically"
+            name: add_new_automatically
+            widget: boolean
+            default: true
+            hint: "On: any piece not in the list above still appears, after your picks, newest first. Off: only the pieces in your list appear."
       - name: about
         label: "About me (home page)"
         file: src/_data/about.json
