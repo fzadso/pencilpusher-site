@@ -32,5 +32,23 @@
       "image": "/uploads/baby.jpg",
       "caption": "Child portrait"
     }
+  ],
+  "faq": [
+    {
+      "question": "What photos work best?",
+      "answer": "Clear, well-lit photos taken at eye level, where you can see the eyes and details. Daylight from a window is ideal. Several photos help, even if one is the main one."
+    },
+    {
+      "question": "Can you combine people or pets from different photos?",
+      "answer": "Yes. Send a photo of each, and say how you'd like them arranged. Adding more subjects adds to the price."
+    },
+    {
+      "question": "How long does it take?",
+      "answer": "A detailed drawing takes 40 to 200 hours, so plan on several weeks. If you need it by a certain date, say so in your request and Cindy will tell you if it's possible."
+    },
+    {
+      "question": "What if I don't love it?",
+      "answer": "Then you don't pay. There's no deposit, and you only pay once you've seen the finished piece."
+    }
   ]
 }

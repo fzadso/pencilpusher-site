@@ -9,7 +9,7 @@ permalink: /shop/
   <nav class="tabs" aria-label="Medium"><a href="#pencil" data-tab="Pencil" aria-current="true">Pencil</a><a href="#acrylic" data-tab="Acrylic">Acrylic</a></nav>
 </div>
 {% for m in ["Pencil", "Acrylic"] %}
-{%- set items = collections.art | byMedium(m) -%}
+{%- set items = collections.art | byMedium(m) | availableFirst -%}
 <section class="shop-section" id="{{ m | lower }}" data-section="{{ m }}" aria-labelledby="h-{{ m | lower }}">
   <h2 class="shop-h" id="h-{{ m | lower }}">{{ m }}</h2>
   {% if items.length %}<div class="grid">{% for a in items %}{% include "card.njk" %}{% endfor %}</div>

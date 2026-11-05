@@ -4,7 +4,7 @@ description: "Original pencil drawings, acrylic paintings, $50 prints and custom
 ---
 {%- set list = collections.art | homeGallery(home) -%}
 {%- set a = list[0] -%}
-<h1 class="vh">{{ settings.site_name }}: pencil drawings and acrylic paintings by {{ settings.artist }}, Boise, Idaho</h1>
+<h1 class="intro">Pencil drawings and acrylic paintings by <span>{{ settings.artist }}</span> · {{ settings.city }}, {{ settings.region }}</h1>
 <div class="strip" id="strip" aria-label="Choose a piece to see it larger">
   {%- for x in list %}<button type="button" data-feature="{{ x.fileSlug }}"{% if loop.first %} class="on" aria-pressed="true"{% else %} aria-pressed="false"{% endif %} aria-label="{{ x.data.title }}"><img src="{{ x.data.pic.thumb }}" alt="" width="{{ x.data.pic.width }}" height="{{ x.data.pic.height }}"></button>{% endfor %}
 </div>

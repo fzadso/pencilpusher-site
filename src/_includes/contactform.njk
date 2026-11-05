@@ -1,0 +1,23 @@
+{#- One contact form used on both the Contact and Commissions pages (same fields, so Netlify
+    treats them as the same "contact" form). Set `preset` before including. -#}
+<form class="form" id="request" name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company" enctype="multipart/form-data">
+  <input type="hidden" name="form-name" value="contact">
+  <p class="vh"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+  <div class="row"><label for="c-name">Your name<input id="c-name" name="name" autocomplete="name" required></label>
+    <label for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" required></label></div>
+  <label for="c-about">What's this about?<select id="c-about" name="about">
+    <option value="question"{% if preset == "question" %} selected{% endif %}>A question about a piece</option>
+    <option value="commission"{% if preset == "commission" %} selected{% endif %}>A commission request</option>
+    <option value="print">A print in another size</option>
+    <option value="other">Something else</option></select></label>
+  <label for="c-msg">Message<textarea id="c-msg" name="message" required placeholder="{% if preset == 'commission' %}Our border collie, Scout, for my dad's birthday. Just his head and shoulders, about 11 × 14.{% else %}Hi Cindy, I have a question about…{% endif %}"></textarea></label>
+  <div class="comm-only">
+    <label for="c-when">Needed by (optional)<input id="c-when" name="needed_by" placeholder="For example: before Christmas"></label>
+  </div>
+  <fieldset class="photos"><legend>Photos <span>(optional, very helpful for commissions; up to 3, total under 8 MB)</span></legend>
+    <input id="c-photo" name="photo" type="file" accept="image/*" aria-label="Photo 1">
+    <div class="comm-only"><input id="c-photo2" name="photo2" type="file" accept="image/*" aria-label="Photo 2"></div>
+    <div class="comm-only"><input id="c-photo3" name="photo3" type="file" accept="image/*" aria-label="Photo 3"></div>
+  </fieldset>
+  <div><button class="btn" type="submit">{% if preset == "commission" %}Send my request{% else %}Send message{% endif %}</button></div>
+</form>

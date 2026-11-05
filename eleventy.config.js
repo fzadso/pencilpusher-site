@@ -66,6 +66,8 @@ export default function (eleventyConfig) {
     api.getFilteredByGlob("src/art/*.md").sort((a, b) => b.date - a.date));
 
   eleventyConfig.addFilter("money", n => (n || n === 0) ? "$" + Number(n).toLocaleString("en-US") : "");
+  // Shop order: pieces whose original is still for sale first, then sold ones (prints still for sale)
+  eleventyConfig.addFilter("availableFirst", items => [...items].sort((a, b) => (a.data.sold ? 1 : 0) - (b.data.sold ? 1 : 0)));
   eleventyConfig.addFilter("byMedium", (items, m) => items.filter(i => i.data.medium === m));
   // Home page gallery: the pieces Cindy picked, in her order (first one shows large).
   // Optionally followed by any other pieces, newest first. Falls back to all art.

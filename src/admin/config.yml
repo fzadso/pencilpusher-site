@@ -107,6 +107,14 @@ collections:
           - { label: "Subjects", name: subjects, widget: list, hint: "Short words, separated by commas" }
           - { label: "How pricing works", name: pricing, widget: text, hint: "Leave a blank line between paragraphs." }
           - { label: "Steps", name: steps, widget: list, field: { label: Step, name: step, widget: string } }
+          - label: "Questions people ask"
+            name: faq
+            widget: list
+            label_singular: "question"
+            required: false
+            fields:
+              - { label: "Question", name: question, widget: string }
+              - { label: "Answer", name: answer, widget: text }
           - label: "Sample commissions"
             name: samples
             widget: list
@@ -131,5 +139,6 @@ collections:
           - { label: "Local pickup note", name: pickup_note, widget: string }
           - { label: "Shipping & returns policy", name: shipping_returns, widget: text, hint: "Shown on the cart page and on each artwork's page. Leave a blank line between paragraphs." }
           - { label: "Print size note", name: print_note, widget: string }
+          - { label: "Show the newsletter signup on the Contact page", name: show_newsletter, widget: boolean, default: false, required: false, hint: "Leave off until you have a way to send newsletters." }
           - { label: "Instagram link", name: instagram, widget: string, required: false }
           - { label: "Facebook link", name: facebook, widget: string, required: false }

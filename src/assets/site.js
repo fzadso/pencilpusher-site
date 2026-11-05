@@ -135,6 +135,10 @@
   /* ---------- contact: preselect "commission" when coming from that page ---------- */
   const about = $("#c-about");
   if (about && /about=commission/.test(location.search)) about.value = "commission";
+  if (about) {
+    const sync = () => $$(".comm-only").forEach(el => el.hidden = about.value !== "commission");
+    about.addEventListener("change", sync); sync();
+  }
 
   /* ---------- cart page ---------- */
   const cartEl = $("#cart");

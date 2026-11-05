@@ -38,7 +38,7 @@ While you're editing a piece, the right half of the screen shows a **preview** o
 
 ## Marking a piece SOLD
 
-When an original sells:
+**When an original sells on the website, it's marked Sold for you** within a couple of minutes. You only need to do it yourself when you sell an original some other way (at a show, in person):
 
 1. Click **Artwork** and click the piece.
 2. Switch on **The original is SOLD**.
@@ -78,7 +78,7 @@ Usually it's better to mark it sold, so people can still see it and buy prints. 
 
 Click **Pages & settings**, then:
 - **About me (home page)**: your story, the quick facts, and an optional photo.
-- **Commissions page**: the opening sentence, the steps, and the sample pictures.
+- **Commissions page**: the opening sentence, the steps, the "Questions people ask" list, and the sample pictures.
 - **Shop & contact settings**: shipping prices, your **Shipping & returns** wording (shown on the cart and on each piece's page), the email shown on the Contact page, your Instagram or Facebook link.
 
 Make your change, then **Publish** and **Publish now**.
@@ -89,14 +89,14 @@ Make your change, then **Publish** and **Publish now**.
 
 - **Square emails you** about each sale, the same as any Square payment. The email shows what they bought and whether they chose **shipping** (with their address) or **local pickup**.
 - If they picked **local pickup**, email them to set a time.
-- If they bought an **original**, remember to mark it **Sold** (see above).
+- If they bought an **original**, the website marks it **Sold** by itself. Check it a few minutes later; if it didn't, mark it yourself (see above).
 
 ---
 
 ## Where messages go
 
-- **Contact form messages and commission requests** are emailed to **Thepencilpusher123@gmail.com**. Just reply to the email to answer them. Photos people attach are linked in the email.
-- **Newsletter signups** are saved on Netlify. Ask [your kid] to download the list for you when you want to send an update.
+- **Contact form messages and commission requests** (from the Contact page or the form on the Commissions page) are emailed to **Thepencilpusher123@gmail.com**. Just reply to the email to answer them. Photos people attach are linked in the email.
+- **Newsletter signup** is switched off for now. When you have a way to send newsletters, it can be switched on under **Shop & contact settings**.
 
 ---
 

@@ -46,6 +46,8 @@ export default async (req) => {
       quantity: String(qty),
       note: [p.medium, p.size, ship ? "" : "LOCAL PICKUP"].filter(Boolean).join(", "),
       base_price_money: { amount: Math.round(p[type] * 100), currency: "USD" },
+      // lets the square-webhook function mark the original sold after payment
+      metadata: { art_id: p.id, kind: type },
     });
   }
 

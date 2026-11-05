@@ -12,6 +12,17 @@ permalink: /commissions/
 </div>
 <div class="how">
   <div><h2>How pricing works</h2>{% for para in commissions.pricing.split("\n\n") %}<p>{{ para }}</p>{% endfor %}
-    <a class="btn cta" href="/contact/?about=commission">Request a commission</a></div>
+    <a class="btn cta" href="#request">Request a commission</a></div>
   <div><h2>How it works</h2><ol class="steps">{% for s in commissions.steps %}<li>{{ s }}</li>{% endfor %}</ol></div>
 </div>
+{% if commissions.faq.length %}
+<section class="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">Questions people ask</h2>
+  {% for q in commissions.faq %}<details><summary>{{ q.question }}</summary>{% for para in q.answer.split("\n\n") %}<p>{{ para }}</p>{% endfor %}</details>
+  {% endfor %}
+</section>
+{% endif %}
+<section class="request" aria-labelledby="req-h">
+  <div><h2 id="req-h">Request a commission</h2><p>Tell Cindy who or what you'd like drawn and attach your best photos. She'll reply by email with a quote. Nothing is due until you've seen the finished piece and love it.</p></div>
+  {% set preset = "commission" %}{% include "contactform.njk" %}
+</section>

@@ -43,6 +43,26 @@ Do these in order. Each step says who does it. **Never paste passwords, tokens o
 7. **Test:** temporarily set a print price to $1 in /admin, buy it with a real card, then refund it in Square and set the price back.
    - To test without real money first, use the **Sandbox** token and location instead and add `SQUARE_ENV` = `sandbox`. Remove that variable when you switch to the production values.
 
+## 4b. Mark originals Sold automatically (about 15 minutes)
+When an original is paid for, the site switches it to Sold by itself (a minute or two later), so it can't be sold twice.
+
+1. **A GitHub key for the site** (it only lets the site edit this one repository):
+   GitHub → your picture → **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
+   - Name: `Pencil Pusher sold switch`. Expiration: the longest offered (put a reminder in your calendar to renew it).
+   - Repository access: **Only select repositories → pencilpusher-site**.
+   - Permissions → Repository permissions → **Contents: Read and write**. Generate, and copy the token.
+2. Netlify → **Project configuration → Environment variables**: add `GITHUB_TOKEN` = that token (secret).
+3. **Tell Square to notify the site:** developer.squareup.com → the "Pencil Pusher website" app → make sure **Production** is selected → **Webhooks → Subscriptions → Add subscription**:
+   - Name: `Mark sold`
+   - URL: `https://zippy-wisp-907064.netlify.app/.netlify/functions/square-webhook`
+     (keep this netlify.app address even after the real domain works; it never changes)
+   - Events: **payment.updated**. Save.
+4. Open the subscription and copy its **Signature key**. In Netlify add:
+   - `SQUARE_WEBHOOK_SIGNATURE_KEY` = the signature key (secret)
+   - `SQUARE_WEBHOOK_URL` = the exact URL from step 3
+5. **Deploys → Trigger deploy**. Then in Square, on the subscription, click **Send test event**: it should show a success (200). The real proof is the next sale of an original: about 2 minutes after payment, the piece shows Sold.
+6. If the GitHub key ever expires, sales still work; pieces just won't flip to Sold on their own until you make a new key and update `GITHUB_TOKEN`.
+
 ## 5. The domain (Matt, about 10 minutes plus waiting)
 1. Netlify → **Domain management → Add a domain** → `thepencilpusher.net` → **Verify → Add domain**. Choose **Set up DNS externally**. Netlify shows the exact records; use those values.
 2. Network Solutions → **My Domain Names → thepencilpusher.net → Manage → Advanced DNS (DNS records)**:
