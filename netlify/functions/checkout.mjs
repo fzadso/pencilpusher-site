@@ -44,7 +44,7 @@ export default async (req) => {
     lineItems.push({
       name: `${p.title} (${type === "original" ? "original" : "print"})`.slice(0, 500),
       quantity: String(qty),
-      note: [p.medium, p.size].filter(Boolean).join(", "),
+      note: [p.medium, p.size, ship ? "" : "LOCAL PICKUP"].filter(Boolean).join(", "),
       base_price_money: { amount: Math.round(p[type] * 100), currency: "USD" },
     });
   }
@@ -65,7 +65,6 @@ export default async (req) => {
     },
     payment_note: ship ? "Ship to customer" : "Local pickup in the Boise area",
   };
-  if (!ship) payload.order.line_items.push({ name: "Local pickup, Boise area (Cindy will email you)", quantity: "1", base_price_money: { amount: 0, currency: "USD" } });
 
   const r = await fetch(`${api}/v2/online-checkout/payment-links`, {
     method: "POST",
