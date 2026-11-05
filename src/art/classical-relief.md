@@ -2,7 +2,7 @@
 title: Classical Relief
 image: /uploads/relief.jpg
 medium: Pencil
-size: 16 × 18 in
+size: 16 × 18
 original_price: 1200
 sold: false
 prints_available: true

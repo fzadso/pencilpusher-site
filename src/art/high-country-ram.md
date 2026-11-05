@@ -2,7 +2,7 @@
 title: High Country Ram
 image: /uploads/ram-acrylic.jpg
 medium: Acrylic
-size: 16 × 20 in
+size: 16 × 20
 original_price: 950
 sold: true
 prints_available: true

@@ -26,7 +26,7 @@
           h("div", { className: "card art-side" },
             h("div", { className: "buy-panel" },
               h("h3", { className: "art-title" }, get("title") || "Title"),
-              h("p", { className: "meta" }, [get("medium") || "Pencil", get("size"), get("year")].filter(Boolean).join(" · ")),
+              h("p", { className: "meta" }, [get("medium") || "Pencil", String(get("size") || "").replace(/\s*(in\.?|inch(es)?|["”″])\s*$/i, "").trim(), get("year")].filter(Boolean).join(" · ")),
               (canOrig || prints) ? h("fieldset", { className: "opts" },
                 canOrig ? h("label", null, h("input", { type: "radio", checked: true, readOnly: true }), " Original") : null,
                 prints && canOrig ? h("label", null, h("input", { type: "radio", readOnly: true }), " Print") : null,

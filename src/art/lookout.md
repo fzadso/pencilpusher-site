@@ -1,5 +1,5 @@
 ---
-size: 8 × 10 in
+size: 8 × 10
 featured: true
 image: /uploads/chipmunk.jpg
 title: Lookout

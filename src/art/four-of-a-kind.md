@@ -2,7 +2,7 @@
 title: Four of a Kind
 image: /uploads/eggs.jpg
 medium: Pencil
-size: 8 × 16 in
+size: 8 × 16
 original_price: 450
 sold: false
 prints_available: true

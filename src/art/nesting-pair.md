@@ -2,7 +2,7 @@
 title: Nesting Pair
 image: /uploads/hawks.jpg
 medium: Acrylic
-size: 20 × 16 in
+size: 20 × 16
 original_price: 1100
 sold: false
 prints_available: true

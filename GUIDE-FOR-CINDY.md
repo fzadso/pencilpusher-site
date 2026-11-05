@@ -25,7 +25,7 @@ While you're editing a piece, the right half of the screen shows a **preview** o
    - **Title**: for example *Silver Fox*
    - **Photo**: click **Choose an image**, then **Upload**, and pick the photo from your computer. Any size is fine; the website shrinks it for you. Use a .jpg or .png photo.
    - **Pencil or acrylic?**: this decides which tab it shows under in the Shop.
-   - **Size**: for example *16 × 20 in*
+   - **Size**: for example *16 × 20* (inches are assumed, no need to type "in")
    - **Price of the original**: just the number, like *950*. Leave it empty if the original isn't for sale.
    - **Sell prints**: on, unless you don't want prints of this one.
    - **Print price**: starts at 50. Change it any time.

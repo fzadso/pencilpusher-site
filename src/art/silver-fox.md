@@ -2,7 +2,7 @@
 title: Silver Fox
 image: /uploads/fox.jpg
 medium: Acrylic
-size: 16 × 20 in
+size: 16 × 20
 original_price: 950
 sold: false
 prints_available: true

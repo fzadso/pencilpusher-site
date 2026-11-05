@@ -2,7 +2,7 @@
 title: Bighorn
 image: /uploads/ram.jpg
 medium: Pencil
-size: 16 × 20 in
+size: 16 × 20
 original_price: 850
 sold: false
 prints_available: true

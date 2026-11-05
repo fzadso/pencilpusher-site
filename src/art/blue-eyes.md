@@ -2,7 +2,7 @@
 title: Blue Eyes
 image: /uploads/husky.jpg
 medium: Pencil
-size: 11 × 14 in
+size: 11 × 14
 original_price: 550
 sold: true
 prints_available: true

@@ -48,7 +48,7 @@ collections:
       - { label: "Photo", name: image, widget: image, choose_url: false, hint: "Click to upload a photo from your computer. Any size works; the website shrinks it. Use .jpg or .png photos." }
       - { label: "Title", name: title, widget: string }
       - { label: "Pencil or acrylic?", name: medium, widget: select, options: [Pencil, Acrylic], default: Pencil, hint: "Decides which tab it appears under in the Shop." }
-      - { label: "Size", name: size, widget: string, required: false, hint: "For example: 16 × 20 in" }
+      - { label: "Size", name: size, widget: string, required: false, hint: "Width × height, for example: 16 × 20 (inches are assumed)" }
       - { label: "Price of the original ($)", name: original_price, widget: number, value_type: int, required: false, hint: "Just the number, like 950. Leave empty if the original isn't for sale." }
       - { label: "The original is SOLD", name: sold, widget: boolean, default: false, hint: "Switch on when the original sells. It stays on the site with a Sold tag, and prints can still be bought." }
       - { label: "Sell prints", name: prints_available, widget: boolean, default: true }

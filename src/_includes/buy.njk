@@ -2,7 +2,7 @@
 {%- set d = a.data -%}
 <div class="buy-panel">
   <h3 class="art-title">{{ d.title }}</h3>
-  <p class="meta">{{ d.medium }}{% if d.size %} · {{ d.size }}{% endif %}{% if d.year %} · {{ d.year }}{% endif %}</p>
+  <p class="meta">{{ d.medium }}{% if d.sizeText %} · {{ d.sizeText }}{% endif %}{% if d.year %} · {{ d.year }}{% endif %}</p>
   {%- if d.canBuyOriginal or d.canBuyPrint %}
   <fieldset class="opts"><legend class="vh">Original or print</legend>
     {%- if d.canBuyOriginal %}

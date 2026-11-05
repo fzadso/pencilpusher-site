@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 ---
-{%- set a = { fileSlug: page.fileSlug, url: page.url, data: { title: title, medium: medium, size: size, year: year, sold: sold, original_price: original_price, canBuyOriginal: canBuyOriginal, canBuyPrint: canBuyPrint, printPrice: printPrice } } -%}
+{%- set a = { fileSlug: page.fileSlug, url: page.url, data: { title: title, medium: medium, sizeText: sizeText, year: year, sold: sold, original_price: original_price, canBuyOriginal: canBuyOriginal, canBuyPrint: canBuyPrint, printPrice: printPrice } } -%}
 {%- set nb = collections.art | byMedium(medium) | neighbors(page.url) -%}
 <nav class="crumbs" aria-label="Browse">
   <a href="/shop/#{{ medium | lower }}">← All {{ medium | lower }}</a>
@@ -18,4 +18,4 @@ layout: base.njk
     {% if settings.shipping_returns %}<details class="policy"><summary>Shipping &amp; returns</summary>{% for para in settings.shipping_returns.split("\n\n") %}<p>{{ para }}</p>{% endfor %}</details>{% endif %}
   </div>
 </div>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":{{ title | json | safe }},"image":{{ (settings.url + (pic.large if pic else "")) | json | safe }},"description":{{ (medium + " by " + settings.artist + (", " + size if size else "")) | json | safe }},"brand":{"@type":"Brand","name":{{ settings.site_name | json | safe }}},"offers":{"@type":"Offer","priceCurrency":"USD","price":{{ (original_price if canBuyOriginal else printPrice) or 0 }},"availability":"https://schema.org/InStock","url":{{ (settings.url + page.url) | json | safe }}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":{{ title | json | safe }},"image":{{ (settings.url + (pic.large if pic else "")) | json | safe }},"description":{{ (medium + " by " + settings.artist + (", " + sizeText + " in" if sizeText else "")) | json | safe }},"brand":{"@type":"Brand","name":{{ settings.site_name | json | safe }}},"offers":{"@type":"Offer","priceCurrency":"USD","price":{{ (original_price if canBuyOriginal else printPrice) or 0 }},"availability":"https://schema.org/InStock","url":{{ (settings.url + page.url) | json | safe }}}}</script>
