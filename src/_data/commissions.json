@@ -1,17 +1,36 @@
 {
   "intro": "People, pets, wildlife, boats, buildings and everything in between, drawn in pencil from your photos.",
-  "subjects": ["Pets", "Portraits", "Wildlife", "Homes & buildings", "Boats"],
-  "pricing": "Every commission is priced by what you'd like drawn, so there's no price list. Tell Cindy about your idea and she'll reply with a quote.\n\nA detailed drawing can take 40 to 200 hours. She'll send progress photos along the way if you'd like them.",
+  "subjects": [
+    "Pets",
+    "Portraits",
+    "Wildlife",
+    "Homes & buildings",
+    "Boats"
+  ],
+  "pricing": "Every commission is priced by what you'd like drawn, so there's no price list. Tell Cindy about your idea and she'll reply with a quote.\n\nThere's no deposit and nothing to pay up front. You only pay once you've seen the finished piece and love it. If it isn't what you hoped for, you don't owe a thing.\n\nA detailed drawing can take 40 to 200 hours. She'll send progress photos along the way if you'd like them.",
   "steps": [
     "Send a request with a few good, clear photos.",
-    "Cindy replies by email with a quote.",
-    "Pay in full, or ask about a payment plan. Artwork is delivered once it's paid off.",
+    "Cindy replies by email with a quote. Nothing is due yet.",
+    "She draws your piece and sends you a photo of the finished artwork.",
+    "Love it? Pay in full, or ask about a payment plan; the artwork is yours once it's paid off. Not quite right? You owe nothing.",
     "Pick it up locally or have it shipped anywhere in the U.S."
   ],
   "samples": [
-    { "image": "/uploads/grandpa.jpg", "caption": "Grandfather and granddaughter" },
-    { "image": "/uploads/cowboy.jpg", "caption": "Portrait" },
-    { "image": "/uploads/calf.jpg", "caption": "Child and calf" },
-    { "image": "/uploads/baby.jpg", "caption": "Child portrait" }
+    {
+      "image": "/uploads/grandpa.jpg",
+      "caption": "Grandfather and granddaughter"
+    },
+    {
+      "image": "/uploads/cowboy.jpg",
+      "caption": "Portrait"
+    },
+    {
+      "image": "/uploads/calf.jpg",
+      "caption": "Child and calf"
+    },
+    {
+      "image": "/uploads/baby.jpg",
+      "caption": "Child portrait"
+    }
   ]
 }
