@@ -74,6 +74,8 @@ main{padding-block:28px 0;min-height:50vh}
 .policy summary{cursor:pointer;color:var(--ink);font-weight:500}
 .policy p{margin:10px 0 0}
 /* home */
+.banner{background:#fff;margin:0 0 18px;line-height:0}
+.banner img{display:block;width:100%;height:auto}
 .intro{font:400 clamp(17px,1.6vw,20px)/1.4 var(--display);color:var(--mu);margin:0 0 14px;text-wrap:balance}
 .intro span{color:var(--ink)}
 .strip{display:flex;gap:8px;overflow-x:auto;padding-block:4px 14px;scrollbar-width:thin}
@@ -132,6 +134,15 @@ main{padding-block:28px 0;min-height:50vh}
 .samples .s img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .samples figcaption{font-size:13px;color:var(--mu);padding-top:8px}
 .how{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;margin-top:64px}
+.how.has-poster{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+.how-text{display:grid;gap:48px;align-content:start}
+.agreement{margin:18px 0 0;display:grid;gap:2px;font-size:14px}
+.agreement a{color:var(--ac)}
+.agreement span{color:var(--mu);font-size:13px}
+.poster{margin:0}
+.poster a{display:block;background:#fff;padding:8px;cursor:zoom-in}
+.poster img{display:block;width:100%;height:auto}
+.poster figcaption{font-size:13px;color:var(--mu);padding-top:8px}
 .how h2{font-size:clamp(28px,3.2vw,38px);margin-bottom:14px}
 .how p{color:var(--mu);margin:0 0 14px}
 .cta{margin-top:12px}

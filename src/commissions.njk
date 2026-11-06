@@ -10,10 +10,14 @@ permalink: /commissions/
 {% for s in commissions.samples %}<figure><div class="s">{% picture s.image, "Commissioned pencil drawing: " + s.caption, "(max-width: 900px) 46vw, 290px" %}</div><figcaption>{{ s.caption }}</figcaption></figure>
 {% endfor %}
 </div>
-<div class="how">
+<div class="how{% if commissions.poster %} has-poster{% endif %}">
+  {% if commissions.poster %}<figure class="poster"><a href="{{ commissions.poster }}" target="_blank" rel="noopener" aria-label="Open the commissions poster full size">{% picture commissions.poster, commissions.poster_alt, "(max-width: 900px) 92vw, 460px" %}</a><figcaption>Tap to see it full size</figcaption></figure>{% endif %}
+  <div class="how-text">
   <div><h2>How pricing works</h2>{% for para in commissions.pricing.split("\n\n") %}<p>{{ para }}</p>{% endfor %}
     <a class="btn cta" href="#request">Request a commission</a></div>
-  <div><h2>How it works</h2><ol class="steps">{% for s in commissions.steps %}<li>{{ s }}</li>{% endfor %}</ol></div>
+  <div><h2>How it works</h2><ol class="steps">{% for s in commissions.steps %}<li>{{ s }}</li>{% endfor %}</ol>
+    {% if commissions.sample_agreement %}<p class="agreement"><a href="{{ commissions.sample_agreement }}" target="_blank" rel="noopener">See a sample commission agreement (PDF)</a><span>The details are filled in for each commission.</span></p>{% endif %}</div>
+  </div>
 </div>
 {% if commissions.faq.length %}
 <section class="faq" aria-labelledby="faq-h">
@@ -23,6 +27,6 @@ permalink: /commissions/
 </section>
 {% endif %}
 <section class="request" aria-labelledby="req-h">
-  <div><h2 id="req-h">Request a commission</h2><p>Tell Cindy who or what you'd like drawn and attach your best photos. She'll reply by email with a quote. Nothing is due until you've seen the finished piece and love it.</p></div>
+  <div><h2 id="req-h">Request a commission</h2><p>Tell Cindy who or what you'd like drawn and attach your best photos. She'll reply by email with a quote and an agreement to sign. Nothing is due until you've agreed to the quote.</p></div>
   {% set preset = "commission" %}{% include "contactform.njk" %}
 </section>

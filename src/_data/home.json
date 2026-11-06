@@ -10,5 +10,7 @@
     "classical-relief",
     "blue-eyes"
   ],
-  "add_new_automatically": true
+  "add_new_automatically": true,
+  "banner": "/uploads/banner.jpg",
+  "banner_alt": "The Pencil Pusher, Cindy Smith Fine Art, with her drawing of speckled eggs in a nest"
 }

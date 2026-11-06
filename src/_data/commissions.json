@@ -7,13 +7,14 @@
     "Homes & buildings",
     "Boats"
   ],
-  "pricing": "Every commission is priced by what you'd like drawn, so there's no price list. Request a commission below about your idea and she'll reply with a quote.\n\nThere's no deposit and nothing to pay up front. You only pay once you've seen the finished piece and love it. If it isn't what you hoped for, you don't owe a thing.\n\nA detailed drawing can take 40 to 200 hours. She'll send progress photos along the way if you'd like them.",
+  "pricing": "Prices depend on the size and how detailed the subject is; the poster shows some sample fees. Request a commission below about your idea and she'll reply with an exact quote.\n\nA 20% non-refundable deposit reserves your spot, and the balance is due when you receive your artwork. If you're not pleased with the finished piece, you don't have to buy it: you owe nothing more, and Cindy keeps the deposit and the original.\n\nA detailed drawing can take 40 to 200 hours, and most are finished within 3 months of the deposit. She'll send progress photos along the way if you'd like them.",
   "steps": [
     "Send a request with a few good, clear photos.",
-    "Cindy replies by email with a quote. Nothing is due yet.",
-    "She draws your piece and sends you a photo of the finished artwork.",
-    "Love it? Pay in full, or ask about a payment plan; the artwork is yours once it's paid off. Not quite right? You owe nothing.",
-    "Pick it up locally or have it shipped anywhere in the U.S."
+    "Cindy replies by email with a quote and a commission agreement to sign.",
+    "Sign the agreement and pay the 20% deposit to reserve your spot.",
+    "She draws your piece and emails you a photo of the finished artwork to approve.",
+    "Love it? Pay the balance, or ask about a payment plan; the artwork is yours once it's paid off. Not pleased? You don't have to buy it.",
+    "Within 50 miles, Cindy hand-delivers it. Farther away, it's mailed and insured."
   ],
   "samples": [
     {
@@ -44,11 +45,18 @@
     },
     {
       "question": "How long does it take?",
-      "answer": "A detailed drawing takes 40 to 200 hours, so plan on several weeks. If you need it by a certain date, say so in your request and Cindy will tell you if it's possible."
+      "answer": "A detailed drawing takes 40 to 200 hours, and most are finished within 3 months of the deposit. If you need it by a certain date, say so in your request and Cindy will tell you if it's possible."
     },
     {
       "question": "What if I don't love it?",
-      "answer": "Then you don't pay. There's no deposit, and you only pay once you've seen the finished piece."
+      "answer": "Then you don't have to buy it. You owe nothing more; the 20% deposit isn't refunded, since it covers Cindy's time, and she keeps the original."
+    },
+    {
+      "question": "Can I make prints of my portrait?",
+      "answer": "Cindy keeps the copyright to her artwork, so it can't be copied without her permission. She can make prints or note cards of your portrait for you for an additional fee."
     }
-  ]
+  ],
+  "poster": "/uploads/commission-poster.jpg",
+  "poster_alt": "Commissions poster: pencil portraits of a golden retriever, a couple, a cat, a girl in a hat, a wooden boat and a fly fisherman, with sample fees: 8×10 portraits $400, pets $350; 11×14 portraits $650, pets $550. Prices vary with the subject.",
+  "sample_agreement": "/assets/sample-commission-agreement.pdf"
 }

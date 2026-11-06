@@ -80,6 +80,8 @@ collections:
               value_field: "{{slug}}"
               search_fields: [title]
               display_fields: ["{{title}} ({{medium}})"]
+          - { label: "Banner across the top (optional)", name: banner, widget: image, required: false, hint: "A wide image like your logo banner. Leave empty for no banner." }
+          - { label: "Describe the banner", name: banner_alt, widget: string, required: false }
           - label: "Also show new pieces automatically"
             name: add_new_automatically
             widget: boolean
@@ -107,6 +109,9 @@ collections:
           - { label: "Subjects", name: subjects, widget: list, hint: "Short words, separated by commas" }
           - { label: "How pricing works", name: pricing, widget: text, hint: "Leave a blank line between paragraphs." }
           - { label: "Steps", name: steps, widget: list, field: { label: Step, name: step, widget: string } }
+          - { label: "Poster (optional)", name: poster, widget: image, required: false, hint: "Shown beside 'How pricing works'. Visitors can tap it to see it full size." }
+          - { label: "Describe the poster", name: poster_alt, widget: text, required: false, hint: "For screen readers: what's on it, including any prices." }
+          - { label: "Sample agreement (PDF)", name: sample_agreement, widget: hidden }
           - label: "Questions people ask"
             name: faq
             widget: list
