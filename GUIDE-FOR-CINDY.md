@@ -95,7 +95,7 @@ Make your change, then **Publish** and **Publish now**.
 
 ## Where messages go
 
-- **Contact form messages and commission requests** (from the Contact page or the form on the Commissions page) are emailed to **Thepencilpusher123@gmail.com**. Just reply to the email to answer them. Photos people attach are linked in the email.
+- **Contact form messages and commission requests** (from the Contact page or the form on the Commissions page) come from "The Pencil Pusher website", with any photos attached. Just click **Reply** to answer the customer. They are emailed to **Thepencilpusher123@gmail.com**. Just reply to the email to answer them. Photos people attach are linked in the email.
 - **Newsletter signup** is switched off for now. When you have a way to send newsletters, it can be switched on under **Shop & contact settings**.
 
 ---

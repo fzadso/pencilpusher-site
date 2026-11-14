@@ -174,7 +174,7 @@
       const btn = $("#checkout"), err = $("#cart-err");
       err.hidden = true; btn.disabled = true; btn.textContent = "Opening secure checkout…";
       try {
-        const r = await fetch("/.netlify/functions/checkout", { method: "POST", headers: { "Content-Type": "application/json" },
+        const r = await fetch("/api/checkout", { method: "POST", headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ items: load(), delivery: $("input[name=delivery]:checked").value }) });
         const j = await r.json().catch(() => ({}));
         if (!r.ok || !j.url) throw new Error(j.error || "Checkout isn't available right now.");

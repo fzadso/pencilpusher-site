@@ -11,9 +11,32 @@
     html { font-size: 17px; }
     body { background: #eef0f2; }
   </style>
+  <script>window.CMS_MANUAL_INIT = true;</script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@3.16.3/dist/decap-cms.js"></script>
   <script src="/admin/preview.js"></script>
+  <script>
+    // Login goes through this site's own /api/auth (Cloudflare Function), whatever address the site is on.
+    // The rest of the settings come from config.yml.
+    CMS.init({
+      config: {
+        backend: {
+          name: "github",
+          repo: "fzadso/pencilpusher-site",
+          branch: "main",
+          base_url: location.origin,
+          auth_endpoint: "api/auth",
+          commit_messages: {
+            create: "Add {{collection}} “{{slug}}”",
+            update: "Update {{collection}} “{{slug}}”",
+            delete: "Remove {{collection}} “{{slug}}”",
+            uploadMedia: "Upload “{{path}}”",
+            deleteMedia: "Delete “{{path}}”"
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>

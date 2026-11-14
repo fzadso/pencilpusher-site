@@ -10,7 +10,7 @@ permalink: /contact/
   <div class="side">
     <div class="box"><h2>Email</h2><p>Prefer your own email app? Write to:</p><span class="email">{{ settings.contact_email }}</span></div>
     {% if settings.show_newsletter %}<div class="box"><h2>New work by email</h2><p>A short note when new drawings, paintings or prints are ready.</p>
-      <form class="news" name="newsletter" method="POST" action="/thanks/?signup" data-netlify="true" netlify-honeypot="company">
+      <form class="news" name="newsletter" method="POST" action="/api/contact" enctype="multipart/form-data">
         <input type="hidden" name="form-name" value="newsletter">
         <p class="vh"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
         <label class="vh" for="nl-email">Email</label><input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"><button class="btn" type="submit">Sign up</button></form></div>{% endif %}

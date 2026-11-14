@@ -1,6 +1,6 @@
-{#- One contact form used on both the Contact and Commissions pages (same fields, so Netlify
-    treats them as the same "contact" form). Set `preset` before including. -#}
-<form class="form" id="request" name="contact" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company" enctype="multipart/form-data">
+{#- One contact form used on both the Contact and Commissions pages; handled by functions/api/contact.js.
+    Set `preset` before including. -#}
+<form class="form" id="request" name="contact" method="POST" action="/api/contact" enctype="multipart/form-data">
   <input type="hidden" name="form-name" value="contact">
   <p class="vh"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
   <div class="row"><label for="c-name">Your name<input id="c-name" name="name" autocomplete="name" required></label>
@@ -14,7 +14,7 @@
   <div class="comm-only">
     <label for="c-when">Needed by (optional)<input id="c-when" name="needed_by" placeholder="For example: before Christmas"></label>
   </div>
-  <fieldset class="photos"><legend>Photos <span>(optional, very helpful for commissions; up to 3, total under 8 MB)</span></legend>
+  <fieldset class="photos"><legend>Photos <span>(optional, very helpful for commissions; up to 3, total under 20 MB)</span></legend>
     <input id="c-photo" name="photo" type="file" accept="image/*" aria-label="Photo 1">
     <div class="comm-only"><input id="c-photo2" name="photo2" type="file" accept="image/*" aria-label="Photo 2"></div>
     <div class="comm-only"><input id="c-photo3" name="photo3" type="file" accept="image/*" aria-label="Photo 3"></div>

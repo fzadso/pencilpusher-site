@@ -54,6 +54,7 @@ export default function (eleventyConfig) {
     }
   });
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/_headers"); // Cloudflare Pages response headers
 
   // {% picture "/uploads/x.jpg", "Alt text", "(max-width: 600px) 100vw, 50vw", "class" %}
   eleventyConfig.addNunjucksAsyncShortcode("picture", async (src, alt, sizes = "100vw", cls = "", loading = "lazy") => {
