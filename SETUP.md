@@ -2,13 +2,9 @@
 
 The site is hosted free on **Cloudflare Pages**. Every change saved in `/admin` or pushed to GitHub rebuilds the site in a minute or two.
 
-Do these in order. **Never paste passwords, tokens or keys into chat or email.** They only go into Cloudflare's or Netlify's settings pages. Menu names on these sites change now and then; if a label below doesn't match exactly, look for the closest one.
+Do these in order. **Never paste passwords, tokens or keys into chat or email.** They only go into Cloudflare's settings pages. Menu names on these sites change now and then; if a label below doesn't match exactly, look for the closest one.
 
 ---
-
-## 0. Freeze the old Netlify site (1 minute, do this first)
-So the old site keeps working, unchanged, until the domain moves:
-Netlify → the project → **Project configuration → Build & deploy → Continuous deployment → Stop builds**.
 
 ## 1. Create the Cloudflare site (about 10 minutes)
 1. Sign up at **dash.cloudflare.com** (free plan).
@@ -37,13 +33,14 @@ Cloudflare → your Pages project → **Settings → Variables and Secrets → A
 
 After adding or changing settings: **Deployments → … on the latest → Retry deployment** so they take effect.
 
+**Careful:** editing text settings on that page has wiped the saved secrets before. After any change there, check that checkout still opens Square's payment page.
+
 ## 3. Contact form email (about 5 minutes)
 Messages from the Contact page and the Commissions request form are emailed **straight to Cindy**, with any photos attached. When she clicks Reply, the reply goes to the customer.
 1. Sign up at **resend.com** using **Cindy's email, Thepencilpusher123@gmail.com** (free plan). Until the domain is verified (optional, below), Resend only delivers to the address the account was made with, so it has to be hers.
 2. **API Keys → Create API key** (permission: Sending access) → copy it into Cloudflare as `RESEND_API_KEY`.
 3. Optional, after step 6 (domain on Cloudflare): Resend → **Domains → Add domain** → `thepencilpusher.net` → let it add the DNS records in Cloudflare → then add the setting `CONTACT_FROM` = `The Pencil Pusher website <website@thepencilpusher.net>`. Mail is then less likely to land in Spam.
 4. Test: send a message from the site's Contact page and check her inbox (and Spam the first time).
-5. You can delete the Gmail forwarding filter from the Netlify days once the domain has moved.
 
 ## 4. Cindy's login to /admin (about 5 minutes)
 1. GitHub → your picture → **Settings → Developer settings → OAuth Apps → New OAuth App**:
@@ -73,7 +70,6 @@ When an original is paid for, the site switches it to Sold by itself (a minute o
 5. Then: GitHub OAuth app callback → `https://thepencilpusher.net/api/callback` (step 4), and Square **Send test event** (step 5).
 6. Optional, for **thepencilpusher.org**: add it to Cloudflare the same way, then **Rules → Redirect Rules** → redirect all requests to `https://thepencilpusher.net`.
 7. Keep auto-renew on at Network Solutions for both domains (registration stays there; only the nameservers changed).
-8. Once everything works on thepencilpusher.net, delete the old Netlify project.
 
 ## 7. Test everything once
 - Home, Shop, a piece's page, Commissions, Contact load on `https://thepencilpusher.net`.
