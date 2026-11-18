@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
     <div class="sum-row"><span>Shipping</span><span id="sum-ship"></span></div>
     <div class="sum-row total"><span>Total</span><span id="sum-total"></span></div>
     <button type="button" class="btn wide" id="checkout">Checkout with Square</button>
-    <p class="meta">You'll pay securely on Square's checkout page. Sales tax, if any, is added there.</p>
+    <p class="meta">You'll pay securely on Square's checkout page.</p>
     <p class="err" id="cart-err" role="alert" hidden></p>
     {% if settings.shipping_returns %}<details class="policy"><summary>Shipping &amp; returns</summary>{% for para in settings.shipping_returns.split("\n\n") %}<p>{{ para }}</p>{% endfor %}</details>{% endif %}
   </aside>
