@@ -36,6 +36,18 @@
     {
       "image": "/uploads/husky.jpg",
       "caption": "Husky with blue eyes"
+    },
+    {
+      "image": "/uploads/girl-and-doberman.jpg",
+      "caption": "Girl and her Doberman"
+    },
+    {
+      "image": "/uploads/german-shepherd.jpg",
+      "caption": "German Shepherd on the beach"
+    },
+    {
+      "image": "/uploads/boat.jpg",
+      "caption": "The RainMaker, Payette Lake"
     }
   ],
   "faq": [
