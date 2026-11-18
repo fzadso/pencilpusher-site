@@ -30,7 +30,7 @@
               (canOrig || prints) ? h("fieldset", { className: "opts" },
                 canOrig ? h("label", null, h("input", { type: "radio", checked: true, readOnly: true }), " Original") : null,
                 prints && canOrig ? h("label", null, h("input", { type: "radio", readOnly: true }), " Print") : null,
-                prints && !canOrig ? h("label", { className: "only" }, sold ? "Original sold · print available" : "Print available") : null) : h("p", { className: "meta" }, "Not for sale"),
+                prints && !canOrig ? h("label", { className: "only" }, sold ? "Original sold · prints available" : "Prints available") : null) : h("p", { className: "meta" }, "Not for sale"),
               price ? h("div", { className: "buy-row" }, h("span", { className: "price" }, price), h("span", { className: "btn" }, "Add to cart")) : null),
             get("body") ? h("div", { className: "story" }, body) : null,
             prints ? h("p", { className: "note" }, "Print: " + money(pp) + ", same size as the original.") : null)));
