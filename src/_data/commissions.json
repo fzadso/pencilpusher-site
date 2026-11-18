@@ -7,7 +7,7 @@
     "Homes & buildings",
     "Boats"
   ],
-  "pricing": "Prices depend on the size and how detailed the subject is; the poster shows some sample fees. Request a commission below about your idea and she'll reply with an exact quote.\n\nA 20% non-refundable deposit reserves your spot, and the balance is due when you receive your artwork. If you're not pleased with the finished piece, you don't have to buy it: you owe nothing more, and Cindy keeps the deposit and the original.\n\nA detailed drawing can take 40 to 200 hours, and most are finished within 3 months of the deposit. She'll send progress photos along the way if you'd like them.",
+  "pricing": "Prices depend on the size and how detailed the subject is. Request a commission below about your idea and she'll reply with an exact quote.\n\nA 20% non-refundable deposit reserves your spot, and the balance is due when you receive your artwork. If you're not pleased with the finished piece, you don't have to buy it: you owe nothing more, and Cindy keeps the deposit and the original.\n\nA detailed drawing can take 40 to 200 hours, and most are finished within 3 months of the deposit. She'll send progress photos along the way if you'd like them.",
   "steps": [
     "Send a request with a few good, clear photos.",
     "Cindy replies by email with a quote and a commission agreement to sign.",
@@ -19,7 +19,7 @@
   "samples": [
     {
       "image": "/uploads/grandpa.jpg",
-      "caption": "Grandfather and granddaughter"
+      "caption": "Father and daughter"
     },
     {
       "image": "/uploads/cowboy.jpg",
@@ -72,7 +72,7 @@
       "answer": "Cindy keeps the copyright to her artwork, so it can't be copied without her permission. She can make prints or note cards of your portrait for you for an additional fee."
     }
   ],
-  "poster": "/uploads/commission-poster.jpg",
-  "poster_alt": "Commissions poster: pencil portraits of a golden retriever, a couple, a cat, a girl in a hat, a wooden boat and a fly fisherman, with sample fees: 8×10 portraits $400, pets $350; 11×14 portraits $650, pets $550. Prices vary with the subject.",
+  "poster": "",
+  "poster_alt": "",
   "sample_agreement": "/assets/sample-commission-agreement.pdf"
 }
