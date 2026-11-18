@@ -210,6 +210,10 @@ html.locked{overflow:hidden}
 .v-panel .v-link{display:inline-block;margin-top:14px;font-size:14px;color:var(--ac)}
 @media (max-width:900px){
   .feature,.about,.how,.contact,.art-page,.cart,.request{grid-template-columns:1fr;gap:28px}
+  /* Commissions on phones and tablets: poster full width, then the text full width */
+  .how.has-poster{grid-template-columns:minmax(0,1fr);gap:36px}
+  .how-text{gap:36px}
+  .poster{max-width:560px;margin-inline:auto;width:100%}
   .grid{grid-template-columns:1fr 1fr}.samples{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){

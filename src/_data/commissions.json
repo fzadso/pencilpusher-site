@@ -32,6 +32,10 @@
     {
       "image": "/uploads/baby.jpg",
       "caption": "Child portrait"
+    },
+    {
+      "image": "/uploads/husky.jpg",
+      "caption": "Husky with blue eyes"
     }
   ],
   "faq": [
