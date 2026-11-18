@@ -1,6 +1,6 @@
 ---
-title: Killdeer Eggs (Limited Edition)
 image: /uploads/killdeer-eggs.jpg
+title: Killdeer Eggs (Limited Editions)
 medium: Pencil
 size: 12 × 20
 original_price: 400
