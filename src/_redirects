@@ -1,0 +1,44 @@
+# Old or guessed addresses -> the right page, so bookmarks and old links never hit "page not found".
+# (Cloudflare Pages reads this file. One rule per line: from  to  status)
+
+# Pieces that were on the site early on and were later removed
+/art/bighorn/            /shop/  301
+/art/blue-eyes/          /commissions/  301
+/art/classical-relief/   /shop/  301
+/art/four-of-a-kind/     /shop/  301
+/art/gathering-of-wings/ /shop/  301
+/art/high-country-ram/   /shop/  301
+/art/lookout/            /shop/  301
+/art/nesting-pair/       /shop/  301
+/art/silver-fox/         /shop/  301
+/art                     /shop/  301
+/art/                    /shop/  301
+
+# Pages people might guess or have bookmarked from older versions of the site
+/home            /  301
+/home.html       /  301
+/index.htm       /  301
+/index.php       /  301
+/default.htm     /  301
+/default.html    /  301
+/about           /#about  301
+/about/          /#about  301
+/about.html      /#about  301
+/bio             /#about  301
+/gallery         /shop/  301
+/gallery/        /shop/  301
+/gallery.html    /shop/  301
+/gallery/*       /shop/  301
+/pencil          /shop/#pencil  301
+/pencil/         /shop/#pencil  301
+/acrylic         /shop/#acrylic  301
+/acrylic/        /shop/#acrylic  301
+/prints          /shop/  301
+/prints/         /shop/  301
+/store           /shop/  301
+/store/          /shop/  301
+/classes         /  301
+/classes/        /  301
+/commission      /commissions/  301
+/commission/     /commissions/  301
+/contact.html    /contact/  301
