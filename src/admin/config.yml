@@ -94,6 +94,8 @@ collections:
           - { label: "Heading", name: heading, widget: string }
           - { label: "Photo (optional)", name: photo, widget: image, required: false }
           - { label: "Describe the photo", name: photo_alt, widget: string, required: false, hint: "For people using screen readers, e.g. “Cindy's drawing of herself drawing her reflection in a pond”" }
+          - { label: "Caption title (optional)", name: photo_title, widget: string, required: false, hint: "Shown under the photo, e.g. Between Two Worlds" }
+          - { label: "Caption second line (optional)", name: photo_subtitle, widget: string, required: false }
           - { label: "About text", name: body, widget: text, hint: "Leave a blank line between paragraphs." }
           - label: "Quick facts"
             name: stats

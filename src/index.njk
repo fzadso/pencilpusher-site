@@ -23,7 +23,7 @@ description: "Original pencil drawings, acrylic paintings, $50 prints and custom
   </div>
 </div>
 <section class="about" id="about">
-  {% if about.photo %}<figure class="portrait">{% picture about.photo, about.photo_alt, "(max-width: 900px) 92vw, 440px" %}</figure>{% endif %}
+  {% if about.photo %}<figure class="portrait">{% picture about.photo, about.photo_alt, "(max-width: 900px) 92vw, 440px" %}{% if about.photo_title or about.photo_subtitle %}<figcaption>{% if about.photo_title %}<b>{{ about.photo_title }}</b>{% endif %}{% if about.photo_subtitle %}<span>{{ about.photo_subtitle }}</span>{% endif %}</figcaption>{% endif %}</figure>{% endif %}
   <div class="about-text">
     <h2>{{ about.heading }}</h2>
     {% for para in about.body.split("\n\n") %}<p>{{ para }}</p>{% endfor %}

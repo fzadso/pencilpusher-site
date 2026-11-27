@@ -98,6 +98,9 @@ main{padding-block:28px 0;min-height:50vh}
 .about:not(:has(.portrait)){grid-template-columns:minmax(0,1fr);max-width:820px}
 .portrait{margin:0;background:var(--paper);padding:10px}
 .portrait img{display:block;width:100%}
+.portrait figcaption{text-align:center;color:#2a2b2e;padding:12px 6px 4px}
+.portrait figcaption b{display:block;font:italic 400 1.35rem/1.25 Spectral,Georgia,serif}
+.portrait figcaption span{display:block;margin-top:4px;font:500 .78rem/1.4 "Work Sans",sans-serif;letter-spacing:.08em;color:#555}
 .about h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:18px}
 .about p{font:400 19px/1.6 var(--display);margin:0 0 16px;max-width:62ch}
 .stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid var(--rule)}
